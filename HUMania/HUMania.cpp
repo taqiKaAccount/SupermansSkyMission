@@ -72,6 +72,7 @@ void drawObjects(SDL_Renderer* gRenderer, SDL_Texture* assets) {
 
         // 5 is for a slightly faster movement speed; 2 was too slow
         superman.moverRect.x += 5;
+        //testing github commit directly 
         
     }
 }
