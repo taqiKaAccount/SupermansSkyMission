@@ -165,34 +165,32 @@ void Game::run( )
 
 			if (e.type == SDL_KEYDOWN) {
                 switch (e.key.keysym.sym) {
-                    case SDLK_w:
-                        std::cout << "W key pressed!" << std::endl;
-						moveUp();
-						up(gRenderer, assets) ;
+                    case SDLK_UP:
+                        std::cout << "Up arrow key pressed!" << std::endl;
+                        moveUp();
+                        up(gRenderer, assets);
                         break;
-                    case SDLK_a:
-                        std::cout << "A key pressed!" << std::endl;
-						moveLeft();
-						left(gRenderer, assets);
+                    case SDLK_DOWN:
+                        std::cout << "Down arrow key pressed!" << std::endl;
+                        moveDown();
+                        down(gRenderer, assets);
                         break;
-                    case SDLK_s:
-                        std::cout << "S key pressed!" << std::endl;
-						moveDown() ;
-						down(gRenderer, assets);
+                    case SDLK_LEFT:
+                        std::cout << "Left arrow key pressed!" << std::endl;
+                        moveLeft();
+                        left(gRenderer, assets);
                         break;
-                    case SDLK_d:
-                        std::cout << "D key pressed!" << std::endl;
-						moveRight() ;
-						drawObjects(gRenderer, assets);
+                    case SDLK_RIGHT:
+                        std::cout << "Right arrow key pressed!" << std::endl;
+                        moveRight();
+                        drawObjects(gRenderer, assets);
                         break;
-
-					case SDLK_l:
+                    case SDLK_l:
                         std::cout << "L key pressed!" << std::endl;
-						animation(gRenderer, assets);
+                        animation(gRenderer, assets);
                         break;
-					
                     default:
-					drawObjects(gRenderer, assets);
+                        drawObjects(gRenderer, assets);
                         break;
                 }
 			}
