@@ -174,7 +174,8 @@ void animation(SDL_Renderer* gRenderer, SDL_Texture* assets) {
     for (Unit& superman : supermans) {
         if (superman.moverRect.x >= 999) {
             // when the superman moves out of the screen reappear from the left
-            superman.moverRect.x = -20;
+            superman.moverRect.x += 30;
+            //edited to block any movement on x axis
         }
 
         // create the superman on the screen
