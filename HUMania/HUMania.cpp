@@ -380,7 +380,7 @@ vector<Unit> bees;
 vector<Unit> bees2;
 void drawObjectswalking(SDL_Renderer* gRenderer, SDL_Texture* assets) {
     for (Unit& bee : bees) {
-       // if (bee.moverRect.x >= 999) {
+        // if (bee.moverRect.x >= 999) {
         //     // when the bees moves out of the screen reappear from the left
         //     bee.moverRect.x = -20;
         // }
@@ -388,54 +388,19 @@ void drawObjectswalking(SDL_Renderer* gRenderer, SDL_Texture* assets) {
         // create the bees on the screen
         SDL_RenderCopy(gRenderer, assets, &bee.srcRect, &bee.moverRect);
 
-      
-        bee.srcRect.x = 540;
-            bee.srcRect.y = 370;
-            bee.srcRect.w = 193;
-            bee.srcRect.h = 115;
 
-
-        // if (bee.srcRect.y == 232) {
-        //     bee.srcRect.x = 540;
-        //     bee.srcRect.y = 370;
-        //     bee.srcRect.w = 193;
-        //     bee.srcRect.h = 115;
-           
-        // } 
-        // else if (bee.srcRect.y == 138) {
-        //     bee.srcRect.x = 527;
-        //     bee.srcRect.y = 252;
-        //     bee.srcRect.w = 194;
-        //     bee.srcRect.h = 115;
-        // }
-        // else{
-        //     bee.srcRect.x = 527;
-        //     bee.srcRect.y = 138;
-        //     bee.srcRect.w = 194;
-        //     bee.srcRect.h = 115;
-
-        // }
-       
-        // // Update srcRect for bees animation
-        // if (bee.srcRect.x == 0) {
-        //     bee.srcRect.x = 2;
-        //     bee.srcRect.y = 361;
-        //     bee.srcRect.w = 159;
-        //     bee.srcRect.h = 124;
-        // } 
-        // else {
-        //     bee.srcRect.x = 0;
-        //     bee.srcRect.y = 237;
-        //     bee.srcRect.w = 153;
-        //     bee.srcRect.h = 84;
-        // }
-
+        bee.srcRect.x = 527;
+        bee.srcRect.y = 138;
+        bee.srcRect.w = 194;
+        bee.srcRect.h = 115;
+   
         // 5 is for a slightly faster movement speed; 2 was too slow
         bee.moverRect.x -= 5;
         //testing github commit directly 
         
     }
 }
+
 
 void drawObjectswalking2(SDL_Renderer* gRenderer, SDL_Texture* assets) {
     for (Unit& bee : bees2) {
