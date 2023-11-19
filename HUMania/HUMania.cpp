@@ -380,10 +380,10 @@ vector<Unit> bees;
 vector<Unit> bees2;
 void drawObjectswalking(SDL_Renderer* gRenderer, SDL_Texture* assets) {
     for (Unit& bee : bees) {
-        if (bee.moverRect.x >= 999) {
-            // when the bees moves out of the screen reappear from the left
-            bee.moverRect.x = -20;
-        }
+       // if (bee.moverRect.x >= 999) {
+        //     // when the bees moves out of the screen reappear from the left
+        //     bee.moverRect.x = -20;
+        // }
 
         // create the bees on the screen
         SDL_RenderCopy(gRenderer, assets, &bee.srcRect, &bee.moverRect);
