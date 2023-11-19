@@ -44,7 +44,7 @@ void handleInput(SDL_Event& e) {
 void drawObjects(SDL_Renderer* gRenderer, SDL_Texture* assets) {
     for (Unit& superman : supermans) {
         if (superman.moverRect.x >= 950) {
-            // when the superman moves out of the screen reappear from the left
+            // block supermans motion at the right side of the screen boundary
             superman.moverRect.x = 920;
         }
 
@@ -53,9 +53,9 @@ void drawObjects(SDL_Renderer* gRenderer, SDL_Texture* assets) {
 
       
         superman.srcRect.x = 0;
-            superman.srcRect.y = 237;
-            superman.srcRect.w = 153;
-            superman.srcRect.h = 84;
+        superman.srcRect.y = 237;
+        superman.srcRect.w = 153;
+        superman.srcRect.h = 84;
        
         // Update srcRect for superman animation
         // if (superman.srcRect.x == 0) {
@@ -71,15 +71,12 @@ void drawObjects(SDL_Renderer* gRenderer, SDL_Texture* assets) {
         //     superman.srcRect.h = 84;
         // }
         if (superman.moverRect.x <= 995) {
-            // when the superman moves out of the screen reappear from the left
+            // make superman constantly move towards the right side
             superman.moverRect.x += 15;
         }
-        // 5 is for a slightly faster movement speed; 2 was too slow
-
-        //testing github commit directly 
-        
     }
 }
+
 
 
 void up(SDL_Renderer* gRenderer, SDL_Texture* assets) {
