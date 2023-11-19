@@ -250,25 +250,20 @@ void moveDown(){
 
 void createObject(int x, int y) {
     if (supermans.size()  < 1 ){
-    int n = 0;
     
     SDL_Rect randomSrcRect;
     SDL_Rect randomMoverRect;
     Unit randomObject;
 
-    switch (n) {
-        case 0:
-            randomSrcRect = {7, 88, 155, 103};
-            randomMoverRect = {x, y, 75, 75};
-            randomObject = {randomSrcRect, randomMoverRect};
-            supermans.push_back(randomObject);
-            break;
-    }
+    
+    randomSrcRect = {7, 88, 155, 103};
+    randomMoverRect = {x, y, 75, 75};
+    randomObject = {randomSrcRect, randomMoverRect};
+    supermans.push_back(randomObject);
 
     }
     std::cout << "Mouse clicked at: " << x << " -- " << y << std::endl;
 }
-
 
 
 
