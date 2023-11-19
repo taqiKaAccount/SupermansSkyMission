@@ -82,7 +82,7 @@ void drawObjects(SDL_Renderer* gRenderer, SDL_Texture* assets) {
 void up(SDL_Renderer* gRenderer, SDL_Texture* assets) {
     for (Unit& superman : supermans) {
         if (superman.moverRect.y <= 0) {
-            // when the superman moves out of the screen reappear from the left
+            // don't let superman exit from the top of the screen
             superman.moverRect.y = 30;
         }
 
@@ -103,11 +103,12 @@ void up(SDL_Renderer* gRenderer, SDL_Texture* assets) {
         //     superman.srcRect.h = 84;
         // }
 
-        // 5 is for a slightly faster movement speed; 2 was too slow
+        // upwards movement
         superman.moverRect.y -= 15;
         
     }
 }
+
 
 
 void down(SDL_Renderer* gRenderer, SDL_Texture* assets) {
