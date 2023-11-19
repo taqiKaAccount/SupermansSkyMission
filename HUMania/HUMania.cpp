@@ -395,26 +395,26 @@ void drawObjectswalking(SDL_Renderer* gRenderer, SDL_Texture* assets) {
             bee.srcRect.h = 115;
 
 
-        if (bee.srcRect.y == 232) {
-            bee.srcRect.x = 540;
-            bee.srcRect.y = 370;
-            bee.srcRect.w = 193;
-            bee.srcRect.h = 115;
+        // if (bee.srcRect.y == 232) {
+        //     bee.srcRect.x = 540;
+        //     bee.srcRect.y = 370;
+        //     bee.srcRect.w = 193;
+        //     bee.srcRect.h = 115;
            
-        } 
-        else if (bee.srcRect.y == 138) {
-            bee.srcRect.x = 527;
-            bee.srcRect.y = 252;
-            bee.srcRect.w = 194;
-            bee.srcRect.h = 115;
-        }
-        else{
-            bee.srcRect.x = 527;
-            bee.srcRect.y = 138;
-            bee.srcRect.w = 194;
-            bee.srcRect.h = 115;
+        // } 
+        // else if (bee.srcRect.y == 138) {
+        //     bee.srcRect.x = 527;
+        //     bee.srcRect.y = 252;
+        //     bee.srcRect.w = 194;
+        //     bee.srcRect.h = 115;
+        // }
+        // else{
+        //     bee.srcRect.x = 527;
+        //     bee.srcRect.y = 138;
+        //     bee.srcRect.w = 194;
+        //     bee.srcRect.h = 115;
 
-        }
+        // }
        
         // // Update srcRect for bees animation
         // if (bee.srcRect.x == 0) {
