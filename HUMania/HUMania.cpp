@@ -532,18 +532,22 @@ void drawObjectswalking2(SDL_Renderer* gRenderer, SDL_Texture* assets) {
 
 void createObject_walking(int x, int y) {
     if (bees.size()  < 50 ){
-    int n = 0;
+    
     SDL_Rect randomSrcRect;
     SDL_Rect randomMoverRect;
     Unit randomObject;
 
-    switch (n) {
-        case 0:
-            randomSrcRect = {540, 370, 193, 115};
+    
+            randomSrcRect = {527, 138, 193, 115};
             randomMoverRect = {x, y, 75, 75};
             randomObject = {randomSrcRect, randomMoverRect};
             bees.push_back(randomObject);
-    }
+
+    //         bee.srcRect.x = 527;
+    //         bee.srcRect.y = 138;
+    //         bee.srcRect.w = 194;
+    //         bee.srcRect.h = 115;
+    
 
     }
     std::cout << "Mouse clicked at: " << x << " -- " << y << std::endl;
