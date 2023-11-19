@@ -554,20 +554,19 @@ void createObject_walking(int x, int y) {
 }
 
 void createObject_walking2(int x, int y) {
-    if (bees2.size()  < 50 ){
-    int n = 0;
+    // if (bees2.size()  < 50 ) {
+
     SDL_Rect randomSrcRect;
     SDL_Rect randomMoverRect;
     Unit randomObject;
 
-    switch (n) {
-        case 0:
-            randomSrcRect = {540, 370, 193, 115};
-            randomMoverRect = {x, y, 75, 75};
-            randomObject = {randomSrcRect, randomMoverRect};
-            bees2.push_back(randomObject);
-    }
+    // This function generates the sprites on the ground which approach from the LEFT side of the screen
 
-    }
-    std::cout << "Mouse clicked at: " << x << " -- " << y << std::endl;
+    randomSrcRect = {540, 370, 193, 115};
+    randomMoverRect = {x, y, 75, 75};
+    randomObject = {randomSrcRect, randomMoverRect};
+    bees2.push_back(randomObject);
+
+
+    // }
 }
