@@ -114,28 +114,14 @@ void up(SDL_Renderer* gRenderer, SDL_Texture* assets) {
 void down(SDL_Renderer* gRenderer, SDL_Texture* assets) {
     for (Unit& superman : supermans) {
         if (superman.moverRect.y >= 450) {
-            // when the superman moves out of the screen reappear from the left
+            // don't let superman go below a certain height
             superman.moverRect.y = 400;
         }
 
         // create the superman on the screen
         SDL_RenderCopy(gRenderer, assets, &superman.srcRect, &superman.moverRect);
-
-       
-        // Update srcRect for superman animation
-        // if (superman.srcRect.x == 0) {
-        //     superman.srcRect.x = 2;
-        //     superman.srcRect.y = 361;
-        //     superman.srcRect.w = 159;
-        //     superman.srcRect.h = 124;
-        // } else {
-        //     superman.srcRect.x = 0;
-        //     superman.srcRect.y = 237;
-        //     superman.srcRect.w = 153;
-        //     superman.srcRect.h = 84;
-        // }
-
-        // 5 is for a slightly faster movement speed; 2 was too slow
+   
+        // downward movement
         superman.moverRect.y += 15;
         
     }
@@ -146,28 +132,15 @@ void down(SDL_Renderer* gRenderer, SDL_Texture* assets) {
 void left(SDL_Renderer* gRenderer, SDL_Texture* assets) {
     for (Unit& superman : supermans) {
         if (superman.moverRect.x <= 0) {
-            // when the superman moves out of the screen reappear from the left
-            superman.moverRect.x = 20;
+            // Prevent superman from leaving the screen from the left
+            superman.moverRect.x += 70;
         }
 
         // create the superman on the screen
         SDL_RenderCopy(gRenderer, assets, &superman.srcRect, &superman.moverRect);
 
        
-        // Update srcRect for superman animation
-        // if (superman.srcRect.x == 0) {
-        //     superman.srcRect.x = 2;
-        //     superman.srcRect.y = 361;
-        //     superman.srcRect.w = 159;
-        //     superman.srcRect.h = 124;
-        // } else {
-        //     superman.srcRect.x = 0;
-        //     superman.srcRect.y = 237;
-        //     superman.srcRect.w = 153;
-        //     superman.srcRect.h = 84;
-        // }
-
-        // 5 is for a slightly faster movement speed; 2 was too slow
+        //left movement
         superman.moverRect.x -= 50;
         
     }
@@ -189,11 +162,7 @@ void animation(SDL_Renderer* gRenderer, SDL_Texture* assets) {
           superman.srcRect.x = 2;
         superman.srcRect.y = 361;
         superman.srcRect.w = 159;
-        superman.srcRect.h = 124;
-
-        
-        // 5 is for a slightly faster movement speed; 2 was too slow
-        
+        superman.srcRect.h = 124;        
         
     }
 }
