@@ -1,21 +1,19 @@
-// #pragma once
-// class superman
-// {
-// public:
-//     superman(SDL_Renderer *rend, SDL_Texture *ast);
+#include <SDL.h>
 
-//     void draw();
-//     void decreaseHealth();
-//     void increaseHealth();
 
-//     bool checkHealth();
-//     void fire(SDL_Renderer *rend, SDL_Texture *ast);
+class superman
+{
+public:
+    superman(SDL_Renderer *rend, SDL_Texture *ast);
 
-//     void moveRight();
-//     void moveLeft();
-//     void move();
+    void draw();
 
-//     int life_status();
+
+    void fire(SDL_Renderer *rend, SDL_Texture *ast);
+
+    void movement(char direction) ;
+
+    int life_status();
     
-//     ~Player();
-// };
+    ~superman();
+};
