@@ -22,6 +22,8 @@ class Game{
     SDL_Texture* gTexture = NULL;
     //global reference to png image sheets
     SDL_Texture* assets=NULL;
+    SDL_Texture* assets1=NULL;
+    //SDL_Texture* assets2=NULL;
     
 
 public:
