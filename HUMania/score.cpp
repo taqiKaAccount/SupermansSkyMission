@@ -12,8 +12,6 @@ Score& Score::operator--(){
         return *this; 
     }
 
-
-
 int Score::getScore()const{
         return ScoreCount ;
     }
