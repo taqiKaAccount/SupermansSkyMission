@@ -1,13 +1,14 @@
+#pragma once
+#include "Unit.hpp"
+#include "pigeon.hpp"
+#include "bee.hpp"
+#include "butterfly.hpp"
 
 class ObjectCreator{
 public:
-
-
-
-
-private:
-
-
+Unit* getObject(int x, int y);
 
 };
-//similar to HW4 objectCreator
+
+
+//same as HW4 objectCreator

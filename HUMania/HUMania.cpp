@@ -642,10 +642,6 @@ void drawObjectswalking2(SDL_Renderer* gRenderer, SDL_Texture* assets) {
 
 
 
-
-
-
-
 // void animation_walking(SDL_Renderer* gRenderer, SDL_Texture* assets) {
 //     for (Unit& bee : bees) {
 //         if (bee.moverRect.x >= 999) {
