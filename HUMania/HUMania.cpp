@@ -468,6 +468,13 @@ void drawObjectsflying(SDL_Renderer* gRenderer, SDL_Texture* assets) {
 // }
 
 
+
+
+
+
+
+
+
 void animation_flying(SDL_Renderer* gRenderer, SDL_Texture* assets) {
     for (Unit& flying : flies) {
         if (flying.moverRect.x >= 999) {

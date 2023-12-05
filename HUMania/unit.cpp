@@ -1,16 +1,16 @@
-// #include "unit.hpp"
+#include "unit.hpp"
 
 
-// Unit::Unit(){};
+Unit::Unit(){};
 
 // void Unit::fly(){};
 
-// // Drawing object
+// Drawing object
 
-// void Unit::draw(){
-//     SDL_RenderCopy(Drawing::gRenderer, Drawing::assets, &srcRect, &moverRect);
-// }
+void Unit::draw(){
+    SDL_RenderCopy(Drawing::gRenderer, Drawing::assets, &srcRect, &moverRect);
+}
 
-// bool Unit::delete_Sprite(){
-//     return false;
-// }
+bool Unit::delete_Sprite(){
+    return false;
+}

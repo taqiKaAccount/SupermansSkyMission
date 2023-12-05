@@ -1,6 +1,7 @@
 #include "superman.hpp" 
 // Superman.cpp
-#include "Unit.hpp"  // Make sure to include the Unit class or define the necessary structs here
+#include "unit.hpp"  // Make sure to include the Unit class or define the necessary structs here
+
 #include "laser.hpp"
 
 Superman::Superman(int x, int y) : srcRect{7, 88, 155, 103}, moverRect{x, y, 75, 75} {}

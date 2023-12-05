@@ -130,7 +130,7 @@ SDL_Texture* Game::loadTexture( std::string path )
 void Game::run( )
 {
 	//initiliase game audio
-	BackgroundMusic BGM("BackgroundMusic.mp3");
+	BackgroundMusic BGM("Mainbackgroundmusic.mp3");
 	BackgroundMusic LazerNoise("SuperManLazer.mp3");
 
 	BGM.play(-1);
