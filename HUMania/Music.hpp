@@ -17,4 +17,9 @@ public:
 
     void play(int repetition);
 
+    void pause();
+
+    void resume();
+    //fucntions to smoothen out audio
+
 };

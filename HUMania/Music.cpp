@@ -31,4 +31,14 @@ void BackgroundMusic::play(int repetition) {
                             //useful for small sound effects
 }
 
+void BackgroundMusic::pause() {
+    if (Mix_PlayingMusic() != 0) {
+        Mix_PauseMusic();
+    }
+}
 
+void BackgroundMusic::resume() {
+    if (Mix_PausedMusic() != 0) {
+        Mix_ResumeMusic();
+    }
+}

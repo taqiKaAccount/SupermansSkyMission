@@ -240,7 +240,7 @@ void Game::run( )
 	    		// SDL_Delay(200);	//causes sdl engine to delay for specified miliseconds
 
 				
-	    			//causes sdl engine to delay for specified miliseconds
+	    		//causes sdl engine to delay for specified miliseconds
 				
 				//SDL_RenderClear(gTexture);
 
@@ -277,7 +277,7 @@ void Game::run( )
                         std::cout << "M key pressed!" << std::endl;
 						//play lazer sfx once
 						LazerNoise.play(1);
-						
+
                         animation(gRenderer, assets);
 						drawObjectsprojectile(gRenderer,assets1);
                         break;
