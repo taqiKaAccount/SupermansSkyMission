@@ -129,7 +129,8 @@ SDL_Texture* Game::loadTexture( std::string path )
 
 void Game::run( )
 {
-
+	BackgroundMusic BGM("BackgroundMusic.mp3");
+	BGM.play();
 
 	bool quit = false;
 	SDL_Event e;
