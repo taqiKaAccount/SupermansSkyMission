@@ -15,6 +15,6 @@ public:
     ~BackgroundMusic();
     //des
 
-    void play();
+    void play(int repetition);
 
 };

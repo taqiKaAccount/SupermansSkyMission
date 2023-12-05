@@ -25,8 +25,8 @@ BackgroundMusic::~BackgroundMusic() {
         SDL_Quit();
     }
 
-void BackgroundMusic::play() {
-    Mix_PlayMusic(music, -1); // -1 plays music infinitely
+void BackgroundMusic::play(int repetition) {
+    Mix_PlayMusic(music, repetition); // -1 plays music infinitely
                             // if set to 2, it will play the bgm twice and then stop
                             //useful for small sound effects
 }

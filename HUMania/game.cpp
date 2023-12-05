@@ -129,8 +129,11 @@ SDL_Texture* Game::loadTexture( std::string path )
 
 void Game::run( )
 {
+	//initiliase game audio
 	BackgroundMusic BGM("BackgroundMusic.mp3");
-	BGM.play();
+	BackgroundMusic LazerNoise("SuperManLazer.mp3");
+
+	BGM.play(-1);
 
 	bool quit = false;
 	SDL_Event e;
@@ -272,6 +275,9 @@ void Game::run( )
                         break;
                     case SDLK_m:
                         std::cout << "M key pressed!" << std::endl;
+						//play lazer sfx once
+						LazerNoise.play(1);
+						
                         animation(gRenderer, assets);
 						drawObjectsprojectile(gRenderer,assets1);
                         break;
