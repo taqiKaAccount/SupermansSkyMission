@@ -9,7 +9,7 @@ private:
     // pointer to what music we want
 
 public:
-    BackgroundMusic(const char* filePath);
+    BackgroundMusic(const char* thefile);
     //cons
 
     ~BackgroundMusic();
@@ -17,5 +17,4 @@ public:
 
     void play();
 
-    void end(); 
 };

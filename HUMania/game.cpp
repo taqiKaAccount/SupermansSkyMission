@@ -1,6 +1,6 @@
 #include "game.hpp"
 #include "HUMania.hpp"
-
+#include "Music.hpp"
 #include "health.hpp"
 
 bool Game::init()
