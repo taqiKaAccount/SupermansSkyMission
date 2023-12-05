@@ -9,5 +9,13 @@ private:
     // pointer to what music we want
 
 public:
+    BackgroundMusic(const char* filePath);
+    //cons
 
+    ~BackgroundMusic();
+    //des
+
+    void play();
+
+    void end(); 
 };
