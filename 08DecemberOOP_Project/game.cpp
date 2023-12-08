@@ -64,10 +64,8 @@ bool Game::loadMedia()
     bool success = true;
     
     //Drawing::assets = loadTexture("assets.png");
-    Drawing::assets = loadTexture("supermen1.png");
-  
-
-
+    //Drawing::assets = loadTexture("supermen1.png");
+    Drawing::assets = loadTexture("Mastersheet.png");
     gTexture = loadTexture("StartScreen.png");
     //gTexture = loadTexture("gameBG.jpg");
     if(Drawing::assets==NULL || gTexture==NULL)
