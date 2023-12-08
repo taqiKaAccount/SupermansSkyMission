@@ -6,6 +6,8 @@
 
 SDL_Renderer* Drawing::gRenderer = NULL;
 SDL_Texture* Drawing::assets = NULL;
+SDL_Texture* Drawing::blimp = NULL;
+
 bool Game::init()
 {
     //Initialization flag
@@ -63,10 +65,12 @@ bool Game::loadMedia()
     
     //Drawing::assets = loadTexture("assets.png");
     Drawing::assets = loadTexture("supermen1.png");
+    Drawing::blimp = loadTexture("Blimp.png");
+
 
     gTexture = loadTexture("StartScreen.png");
     //gTexture = loadTexture("gameBG.jpg");
-    if(Drawing::assets==NULL || gTexture==NULL)
+    if(Drawing::assets==NULL || Drawing::blimp==NULL || gTexture==NULL)
     {
         printf("Unable to run due to error: %s\n",SDL_GetError());
         success =false;
@@ -114,10 +118,11 @@ SDL_Texture* Game::loadTexture( std::string path )
 }
 void Game::run( )
 {
-    BackgroundMusic BGM("Mainbackgroundmusic.mp3");
-    BGM.play(-1);
+    // BackgroundMusic BGM("Mainbackgroundmusic.mp3");
+    // BGM.play(-1);
     bool quit = false;
     SDL_Event e;
+
     HUMania humania;
     Superman supermanObject(-100 , 200);
     while( !quit )
@@ -131,17 +136,19 @@ void Game::run( )
             {
                 quit = true;
             }
-            if(e.type == SDL_MOUSEBUTTONDOWN){
-            //this is a good location to add pigeon in linked list.
-                int xMouse, yMouse;
-                SDL_GetMouseState(&xMouse,&yMouse);
-                humania.createObject(xMouse, yMouse);
-            }
+
+            // if(e.type == SDL_MOUSEBUTTONDOWN){
+            // //this is a good location to add pigeon in linked list.
+            //     int xMouse, yMouse;
+            //     SDL_GetMouseState(&xMouse,&yMouse);
+            //     humania.createObject(xMouse, yMouse);
+            // }
 
 			if (e.type == SDL_KEYDOWN && e.key.keysym.sym == SDLK_SPACE) {
 
                 gTexture = loadTexture("gameBG.jpg");
                 //move superman onto the screen
+                supermanObject.right(Drawing::gRenderer , Drawing::assets);
                 supermanObject.right(Drawing::gRenderer , Drawing::assets);
 			}
             if (e.type == SDL_KEYDOWN) {
@@ -161,7 +168,8 @@ void Game::run( )
                     case SDLK_RIGHT:
                         std::cout << "Right arrow key pressed!" << std::endl;
                         supermanObject.right(Drawing::gRenderer , Drawing::assets);
-                        humania.createObject(700, 450);
+
+                        // humania.createObject(700, 450);
                         break;
             }
         }
