@@ -6,10 +6,10 @@ Unit* ObjectCreator::getObject(int x, int y){
 
     switch (n) {
         case 0:
-            animals = new Bee(x, y);
+            animals = new Blimp(x, y);
             break;
         case 1:
-            animals = new Butterfly(x, y);
+            animals = new RunningEnemy(x, y);
             break;
         case 2:
             animals = new Plane(x, y);
