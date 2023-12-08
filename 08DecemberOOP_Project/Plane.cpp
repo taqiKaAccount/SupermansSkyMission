@@ -1,13 +1,15 @@
 #pragma once
-#include "pigeon.hpp"
-// pigeon implementation will go here.
+#include "Plane.hpp"
 
-Pigeon::Pigeon(int x, int y) : Unit(){
+
+Plane::Plane(int x, int y) : Unit(){
     Unit::srcRect = {7,88,160,103};
-    Unit::moverRect = {20, 550, 50, 50};
+    Unit::moverRect = {850, 50, 50, 50};
 }
+//spawn position for plane is set
+
 // fly() is overrided from the superclass
-void Pigeon::fly(){
+void Plane::fly(){
     // 
     moverRect.x += speed;
     speed += speed; 

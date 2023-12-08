@@ -12,7 +12,7 @@ Unit* ObjectCreator::getObject(int x, int y){
             animals = new Butterfly(x, y);
             break;
         case 2:
-            animals = new Pigeon(x, y);
+            animals = new Plane(x, y);
             break;
     }
     
