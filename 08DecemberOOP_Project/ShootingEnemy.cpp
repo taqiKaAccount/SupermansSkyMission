@@ -4,7 +4,7 @@
 
 ShootingEnemy::ShootingEnemy(int x, int y) : Unit(){
     Unit::srcRect = {7,88,160,103};
-    Unit::moverRect = {x, y, 50, 50};
+    Unit::moverRect = {20, 550, 50, 50};
 }
 
 bool ShootingEnemy::del_child(){
@@ -53,3 +53,4 @@ void ShootingEnemy::fly(bool takeshot){
     } 
 
 }
+// these are according to the shootingEnemy.png
