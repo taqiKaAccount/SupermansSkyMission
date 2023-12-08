@@ -8,5 +8,6 @@ class Plane : public Unit{
     Plane(int x, int y);
     void fly();
     int speed = 0.5;
+    bool del_child();
 };
 

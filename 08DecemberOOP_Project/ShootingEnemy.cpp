@@ -3,7 +3,12 @@
 #include "ShootingEnemy.hpp"
 
 ShootingEnemy::ShootingEnemy(int x, int y) : Unit(){
-    Unit::srcRect = {7,88,160,103};
+    Unit::srcRect = {1383,843,94,129};
+    //724,843,95,129
+    //
+
+
+    //gun 41,818,77,155
     Unit::moverRect = {20, 550, 50, 50};
 }
 
@@ -31,25 +36,16 @@ void ShootingEnemy::fly(bool takeshot){
     if(moverRect.x > 999){
         moverRect.x = 0;
     }
-    if (takeshot)
-    //display the shooting image
-    {
-        srcRect.x=24;
-        srcRect.y=147;
-        srcRect.w=40;
-        srcRect.h=119;
-        takeshot = false;
-    }
-    else if (srcRect.x==608) {
-        srcRect.x=322;
-        srcRect.y=211;
-        srcRect.w=40;
-        srcRect.h=54;
-    } else if (srcRect.x==322) {
-        srcRect.x=608;
-        srcRect.y=211;
-        srcRect.w=40;
-        srcRect.h=54;
+    else if (srcRect.x==724) {
+        srcRect.x=1383;
+        srcRect.y=843;
+        srcRect.w=94;
+        srcRect.h=129;
+    } else if (srcRect.x==1383) {
+        srcRect.x=724;
+        srcRect.y=843;
+        srcRect.w=95;
+        srcRect.h=129;
     } 
 
 }

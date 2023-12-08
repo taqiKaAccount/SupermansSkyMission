@@ -3,7 +3,8 @@
 #include "unit.hpp"  // Make sure to include the Unit class or define the necessary structs here
 
 
- Superman::Superman(int x, int y) : srcRect{7, 88, 155, 103}, moverRect{x, y, 75, 75} {}
+ Superman::Superman(int x, int y) : srcRect{10, 26, 187, 119}, moverRect{x, y, 75, 75} {}
+//laser superman coordinates  332,269,187,119
 
 // Superman::Superman(int x, int y) : public Unit() {
 //     Unit::srcRect = {7, 88, 155, 103};  // Initialize srcRect with specific values

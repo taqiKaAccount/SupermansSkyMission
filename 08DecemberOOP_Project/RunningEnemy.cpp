@@ -3,13 +3,14 @@
 #include "RunningEnemy.hpp"
 
 RunningEnemy::RunningEnemy(int x, int y) : Unit(){
-    Unit::srcRect = {7,88,160,103};
+    Unit::srcRect = {334,588,126,148};
+    //26,589,147,152
     Unit::moverRect = {850, 550, 50, 50};
 }
 //spawn position is set perfectly
 
 bool RunningEnemy::del_child(){
-    if(moverRect.x >= 999){
+    if(moverRect.x <= 0){
         return true;
     }
     else{
@@ -19,21 +20,21 @@ bool RunningEnemy::del_child(){
 // fly() is overrided from the superclass
 void RunningEnemy::fly(){
     // 
-    moverRect.x += speed;
+    moverRect.x -= speed;
     speed += 0.5; //slowly increase speed as time passes to increase difficulty
     if(moverRect.x > 999){
         moverRect.x = 0;
     }
-    else if (srcRect.x==608) {
-        srcRect.x=322;
-        srcRect.y=211;
-        srcRect.w=40;
-        srcRect.h=54;
-    } else if (srcRect.x==322) {
-        srcRect.x=608;
-        srcRect.y=211;
-        srcRect.w=40;
-        srcRect.h=54;
+    else if (srcRect.x==334) {
+        srcRect.x=26;
+        srcRect.y=589;
+        srcRect.w=147;
+        srcRect.h=152;
+    } else if (srcRect.x==26) {
+        srcRect.x=334;
+        srcRect.y=588;
+        srcRect.w=126;
+        srcRect.h=148;
     } 
 
 }

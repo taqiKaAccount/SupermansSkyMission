@@ -1,6 +1,11 @@
 #pragma once
 #include "Unit.hpp"
 #include "Plane.hpp"
+#include "RunningEnemy.hpp"
+#include "ShootingEnemy.hpp"
+#include "superman.hpp"
+#
+
 #include "bee.hpp"
 #include "butterfly.hpp"
 

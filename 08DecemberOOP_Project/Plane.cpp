@@ -3,35 +3,42 @@
 
 
 Plane::Plane(int x, int y) : Unit(){
-    Unit::srcRect = {7,88,160,103};
+    Unit::srcRect = {307,92,240,86};
     Unit::moverRect = {850, 50, 50, 50};
 }
 //spawn position for plane is set
 
+bool Plane::del_child(){
+    if(moverRect.x <= 0){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+
 // fly() is overrided from the superclass
 void Plane::fly(){
-    // 
-    moverRect.x += speed;
-    speed += speed; 
-    if(moverRect.x > 999){
-        moverRect.x = 0;
-    } 
-    if (srcRect.x==7) {
-        srcRect.x=0;
-        srcRect.y=237;
-        srcRect.w=153;
-        srcRect.h=84;
-    } else if (srcRect.x==0) {
-        srcRect.x=2;
-        srcRect.y=361;
-        srcRect.w=159;
-        srcRect.h=124;
-    } else if (srcRect.x==2) {
-        srcRect.x=7;
-        srcRect.y=88;
-        srcRect.w=155;
-        srcRect.h=103;
+    if (srcRect.x == 307) {
+        srcRect.x=594;
+        srcRect.y=92;
+        srcRect.w=239;
+        srcRect.h=88;
+
+    } else if (srcRect.x == 594) {
+        srcRect.x=888;
+        srcRect.y=92;
+        srcRect.w=239;
+        srcRect.h=88;
+
+    } else if (srcRect.x == 888){
+        srcRect.x=307;
+        srcRect.y=92;
+        srcRect.w=240;
+        srcRect.h=86;
     }
+
+    moverRect.x -= speed+rand()%10; 
 
 }
 
