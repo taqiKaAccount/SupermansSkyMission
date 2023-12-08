@@ -1,7 +1,4 @@
-// Prevents multiple inclusions of the same header file
 #pragma once
-
-// Include the header file for the ObjectCreator class
 #include "objectCreator.hpp"
 
 // Method to create and return a pointer to a randomly chosen Unit object
