@@ -3,10 +3,14 @@
 #include "drawing.hpp"
 #include "unit.hpp"
 class Lazer : public Unit{
+    private:
+    int speed;
 
     public:
-    Lazer(int x, int y);
-    void fly();
-    int speed = 11;
+    Lazer(int x, int y, int lazerType);
+
+    void Move();
+    void Draw();
     bool del_child();
 };
+// we can use one function for superman lazer and for the bullet
