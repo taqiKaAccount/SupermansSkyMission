@@ -1,4 +1,5 @@
 #pragma once
+#include <iostream>
 #include "ShootingEnemy.hpp"
 
 ShootingEnemy::ShootingEnemy(int x, int y) : Unit(){
@@ -15,31 +16,40 @@ bool ShootingEnemy::del_child(){
     }
 }
 
-void ShootingEnemy::shootingtime(){std::cout<<"hi"};
+void ShootingEnemy::shootingtime(){
+    std::cout<<"hi";
+    //will call a bullet image or class here idk
+    // this changes the image 
+    fly(true);
+    };
 
 // fly() is overrided from the superclass
-void ShootingEnemy::fly(){
+void ShootingEnemy::fly(bool takeshot){
     // 
     moverRect.x += speed;
     speed += 0.5; //slowly increase speed as time passes to increase difficulty
     if(moverRect.x > 999){
         moverRect.x = 0;
-    } 
-    if (srcRect.x==7) {
-        srcRect.x=0;
-        srcRect.y=237;
-        srcRect.w=153;
-        srcRect.h=84;
-    } else if (srcRect.x==0) {
-        srcRect.x=2;
-        srcRect.y=361;
-        srcRect.w=159;
-        srcRect.h=124;
-    } else if (srcRect.x==2) {
-        srcRect.x=7;
-        srcRect.y=88;
-        srcRect.w=155;
-        srcRect.h=103;
     }
+    if (takeshot)
+    //display the shooting image
+    {
+        srcRect.x=24;
+        srcRect.y=147;
+        srcRect.w=40;
+        srcRect.h=119;
+        takeshot = false;
+    }
+    else if (srcRect.x==608) {
+        srcRect.x=322;
+        srcRect.y=211;
+        srcRect.w=40;
+        srcRect.h=54;
+    } else if (srcRect.x==322) {
+        srcRect.x=608;
+        srcRect.y=211;
+        srcRect.w=40;
+        srcRect.h=54;
+    } 
 
 }

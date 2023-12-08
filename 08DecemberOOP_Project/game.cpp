@@ -119,8 +119,10 @@ void Game::run( )
     bool quit = false;
     SDL_Event e;
     HUMania humania;
+    Superman supermanObject(-100 , 0);
     while( !quit )
     {
+        supermanObject.draw(Drawing::gRenderer, Drawing::assets);
         //Handle events on queue
         while( SDL_PollEvent( &e ) != 0 )
         {
@@ -139,33 +141,32 @@ void Game::run( )
 			if (e.type == SDL_KEYDOWN && e.key.keysym.sym == SDLK_SPACE) {
 
                 gTexture = loadTexture("gameBG.jpg");
-				//createObject(50, 100);
-
-				//createObject(50, 100);
+                // supermanObject.draw(Drawing::gRenderer, Drawing::assets);
+                supermanObject.right(Drawing::gRenderer , Drawing::assets);
+                supermanObject.down(Drawing::gRenderer , Drawing::assets);
+                supermanObject.down(Drawing::gRenderer , Drawing::assets);
 			}
-        //     if (e.type == SDL_KEYDOWN) {
-        //         switch (e.key.keysym.sym) {
-        //             case SDLK_UP:
-        //                 std::cout << "Up arrow key pressed!" << std::endl;
-        //                 Superman::up(gRenderer, assets);
-        //                 break;
-        //             case SDLK_DOWN:
-        //                 std::cout << "Down arrow key pressed!" << std::endl;
-        //                 Superman::down(gRenderer, assets);
-        //                 break;
-        //             case SDLK_LEFT:
-        //                 std::cout << "Left arrow key pressed!" << std::endl;
-        //                 Superman::left(gRenderer, assets);
-        //                 break;
-        //             case SDLK_RIGHT:
-        //                 std::cout << "Right arrow key pressed!" << std::endl;
-        //                 Superman::right(gRenderer, assets);
-        //                 break;
-        //     }
-        // }
+            if (e.type == SDL_KEYDOWN) {
+                switch (e.key.keysym.sym) {
+                    case SDLK_UP:
+                        std::cout << "Up arrow key pressed!" << std::endl;
+                        supermanObject.up(Drawing::gRenderer , Drawing::assets);
+                        break;
+                    case SDLK_DOWN:
+                        std::cout << "Down arrow key pressed!" << std::endl;
+                        supermanObject.down(Drawing::gRenderer , Drawing::assets);
+                        break;
+                    case SDLK_LEFT:
+                        std::cout << "Left arrow key pressed!" << std::endl;
+                        supermanObject.left(Drawing::gRenderer , Drawing::assets);
+                        break;
+                    case SDLK_RIGHT:
+                        std::cout << "Right arrow key pressed!" << std::endl;
+                        supermanObject.right(Drawing::gRenderer , Drawing::assets);
+                        break;
+            }
+        }
 
-
-//working on this line here changing functionality to q key
 			if (e.type == SDL_KEYDOWN && e.key.keysym.sym == SDLK_q) {
 				SDL_DestroyTexture(Drawing::assets);
                 gTexture = loadTexture("SuperManGameOver.png");
@@ -176,6 +177,7 @@ void Game::run( )
         SDL_RenderCopy(Drawing::gRenderer, gTexture, NULL, NULL);//Draws background to renderer
         //***********************draw the objects here********************
         humania.drawObjects();
+        supermanObject.draw(Drawing::gRenderer, Drawing::assets);
         //****************************************************************
         SDL_RenderPresent(Drawing::gRenderer); //displays the updated renderer
         SDL_Delay(100); //causes sdl engine to delay for specified miliseconds

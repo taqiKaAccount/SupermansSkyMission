@@ -9,6 +9,6 @@ class ShootingEnemy : public Unit{
     bool del_child();
     ShootingEnemy(int x = 0, int y = 0);
     void shootingtime();
-    void fly();
+    void fly(bool takeshot = false);
     int speed = 0.5;
 };
