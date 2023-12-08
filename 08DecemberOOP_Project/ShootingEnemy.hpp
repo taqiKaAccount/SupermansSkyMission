@@ -8,6 +8,7 @@ class ShootingEnemy : public Unit{
     char name = 'S';
     bool del_child();
     ShootingEnemy(int x = 0, int y = 0);
+    void shootingtime();
     void fly();
     int speed = 0.5;
 };

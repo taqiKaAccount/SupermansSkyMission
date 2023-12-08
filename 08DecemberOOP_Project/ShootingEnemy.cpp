@@ -15,8 +15,7 @@ bool ShootingEnemy::del_child(){
     }
 }
 
-
-
+void ShootingEnemy::shootingtime(){std::cout<<"hi"};
 
 // fly() is overrided from the superclass
 void ShootingEnemy::fly(){
