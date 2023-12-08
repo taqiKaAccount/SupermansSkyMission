@@ -11,8 +11,12 @@
 //     Unit::moverRect = {x, y, 75, 75};
 // }
 
-const SDL_Rect& Superman::getMoverRect() const {
-    return moverRect; // Assuming moverRect is a member variable in the Superman class
+int Superman::getMoverRectX() const {
+    return moverRect.x;
+}
+
+int Superman::getMoverRectY() const {
+    return moverRect.y;
 }
 
 void Superman::draw(SDL_Renderer* gRenderer, SDL_Texture* assets) {

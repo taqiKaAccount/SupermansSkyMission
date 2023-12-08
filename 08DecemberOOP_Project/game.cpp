@@ -3,6 +3,9 @@
 #include "drawing.hpp"
 #include "Music.hpp"
 #include "superman.hpp"
+#include "Lazer.hpp"
+#include "LazerMaker.hpp"
+
 
 SDL_Renderer* Drawing::gRenderer = NULL;
 SDL_Texture* Drawing::assets = NULL;
@@ -122,6 +125,7 @@ void Game::run( )
     SDL_Event e;
 
     HUMania humania;
+    LazerMaker lazermachine ;
     Superman supermanObject(-100 , 200);
     while( !quit )
     {
@@ -169,6 +173,12 @@ void Game::run( )
 
                         humania.createObject(700, 450);
                         break;
+                    case SDLK_z:
+                        std::cout << "z pressed!" << std::endl;
+                        //supermanObject.up(Drawing::gRenderer , Drawing::assets);
+
+                        lazermachine.createObject(supermanObject.getMoverRectX(), supermanObject.getMoverRectY());
+                        break;
             }
         }
 
@@ -182,6 +192,7 @@ void Game::run( )
         SDL_RenderCopy(Drawing::gRenderer, gTexture, NULL, NULL);//Draws background to renderer
         //***********************draw the objects here********************
         humania.drawObjects();
+        lazermachine.drawObjects();
         supermanObject.draw(Drawing::gRenderer, Drawing::assets);
         //****************************************************************
         SDL_RenderPresent(Drawing::gRenderer); //displays the updated renderer

@@ -7,9 +7,4 @@ class blimp : public Unit{
         void fly();
         blimp(int x, int y);
         bool del_child();
-
-    private:
-        bool is_hovering = false;
-        int hover_frame = 10;
-
 };

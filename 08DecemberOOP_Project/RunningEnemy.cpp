@@ -17,6 +17,7 @@ bool RunningEnemy::del_child(){
         return false;
     }
 }
+
 // fly() is overrided from the superclass
 void RunningEnemy::fly(){
     // 
@@ -32,7 +33,7 @@ void RunningEnemy::fly(){
         srcRect.y=588;
         srcRect.w=126;
         srcRect.h=148;
-    } 
+    }
 
 }
 //need to set according to the runningenemy.png
