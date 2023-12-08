@@ -4,7 +4,6 @@
 #include "unit.hpp"
 class blimp : public Unit{
     public:
-        char name = 'B';
         void fly();
         blimp(int x, int y);
         bool del_child();

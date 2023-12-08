@@ -5,7 +5,6 @@
 
 class ShootingEnemy : public Unit{
     public:
-    char name = 'S';
     bool del_child();
     ShootingEnemy(int x = 0, int y = 0);
     // void shootingtime();

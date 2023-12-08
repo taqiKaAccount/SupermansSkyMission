@@ -2,11 +2,11 @@
 #include<SDL.h>
 #include "drawing.hpp"
 #include "unit.hpp"
-class Plane : public Unit{
+class Lazer : public Unit{
+
     public:
-    Plane(int x, int y);
+    Lazer(int x, int y);
     void fly();
-    int speed = 0.5;
+    int speed = 11;
     bool del_child();
 };
-
