@@ -41,15 +41,15 @@ void Superman::down(SDL_Renderer* gRenderer, SDL_Texture* assets) {
 
 void Superman::left(SDL_Renderer* gRenderer, SDL_Texture* assets) {
     if (moverRect.x <= 0) {
-        moverRect.x = 20;
+        moverRect.x = 35;
     }
     moverRect.x -= 50;
     SDL_RenderCopy(gRenderer, assets, &srcRect, &moverRect);
 }
 
 void Superman::right(SDL_Renderer* gRenderer, SDL_Texture* assets) {
-    if (moverRect.x <= 0) {
-        moverRect.x = 20;
+    if (moverRect.x >= 900) {
+        moverRect.x = 849;
     }
     moverRect.x += 50;
     SDL_RenderCopy(gRenderer, assets, &srcRect, &moverRect);
@@ -57,7 +57,6 @@ void Superman::right(SDL_Renderer* gRenderer, SDL_Texture* assets) {
 
 void Superman::createObject(int x, int y) {
     // Implementation as per your requirement
-    
 }
 
 bool Superman::supermanCollision(const SDL_Rect* A, SDL_Rect* B) {

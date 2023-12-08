@@ -119,7 +119,7 @@ void Game::run( )
     bool quit = false;
     SDL_Event e;
     HUMania humania;
-    Superman supermanObject(-100 , 0);
+    Superman supermanObject(-100 , 200);
     while( !quit )
     {
         supermanObject.draw(Drawing::gRenderer, Drawing::assets);
@@ -141,10 +141,8 @@ void Game::run( )
 			if (e.type == SDL_KEYDOWN && e.key.keysym.sym == SDLK_SPACE) {
 
                 gTexture = loadTexture("gameBG.jpg");
-                // supermanObject.draw(Drawing::gRenderer, Drawing::assets);
+                //move superman onto the screen
                 supermanObject.right(Drawing::gRenderer , Drawing::assets);
-                supermanObject.down(Drawing::gRenderer , Drawing::assets);
-                supermanObject.down(Drawing::gRenderer , Drawing::assets);
 			}
             if (e.type == SDL_KEYDOWN) {
                 switch (e.key.keysym.sym) {
