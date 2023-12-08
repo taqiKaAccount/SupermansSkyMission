@@ -6,6 +6,7 @@ RunningEnemy::RunningEnemy(int x, int y) : Unit(){
     Unit::srcRect = {7,88,160,103};
     Unit::moverRect = {850, 550, 50, 50};
 }
+//spawn position is set perfectly
 
 bool RunningEnemy::del_child(){
     if(moverRect.x >= 999){
@@ -15,14 +16,6 @@ bool RunningEnemy::del_child(){
         return false;
     }
 }
-
-void RunningEnemy::shootingtime(){
-    std::cout<<"hi";
-    //will call a bullet image or class here idk
-    // this changes the image 
-    fly(true);
-    };
-
 // fly() is overrided from the superclass
 void RunningEnemy::fly(){
     // 
@@ -44,3 +37,4 @@ void RunningEnemy::fly(){
     } 
 
 }
+//need to set according to the runningenemy.png
