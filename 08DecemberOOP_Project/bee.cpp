@@ -12,7 +12,7 @@ bool Bee::del_child(){
 
 Bee::Bee(int x, int y) : Unit(){
     Unit::srcRect = {63, 619, 151, 166};
-    Unit::moverRect = {x, y, 50, 50};
+    Unit::moverRect = {700, 500, 50, 50};
 }
 void Bee::fly(){
     if (srcRect.x==63) {

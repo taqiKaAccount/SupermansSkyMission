@@ -161,6 +161,7 @@ void Game::run( )
                     case SDLK_RIGHT:
                         std::cout << "Right arrow key pressed!" << std::endl;
                         supermanObject.right(Drawing::gRenderer , Drawing::assets);
+                        humania.createObject(700, 450);
                         break;
             }
         }

@@ -4,7 +4,7 @@
 
 Butterfly::Butterfly(int x, int y) : Unit(){
     Unit::srcRect = {256, 24, 174, 134};
-    Unit::moverRect = {x, y, 50, 50};
+    Unit::moverRect = {700, 600, 50, 50};
 }
 
 void Butterfly::fly(){

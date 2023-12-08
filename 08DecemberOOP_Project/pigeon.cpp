@@ -4,7 +4,7 @@
 
 Pigeon::Pigeon(int x, int y) : Unit(){
     Unit::srcRect = {7,88,160,103};
-    Unit::moverRect = {x, y, 50, 50};
+    Unit::moverRect = {700, 300, 50, 50};
 }
 // fly() is overrided from the superclass
 void Pigeon::fly(){
