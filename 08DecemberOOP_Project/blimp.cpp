@@ -11,11 +11,11 @@ bool Blimp::del_child(){
 }
 
 Blimp::Blimp(int x, int y) : Unit(){
-    Unit::srcRect = {63, 619, 151, 166};
+    Unit::srcRect = {0, 234, 162, 109};
     Unit::moverRect = {20, 750, 50, 50};
 }
 void Blimp::fly(){
-    if (srcRect.x==63) {
+    if (srcRect.x==0) {
         srcRect.x=234;
         srcRect.y=630;
         srcRect.w=163;
