@@ -6,7 +6,7 @@
 
 SDL_Renderer* Drawing::gRenderer = NULL;
 SDL_Texture* Drawing::assets = NULL;
-SDL_Texture* Drawing::blimp = NULL;
+
 
 bool Game::init()
 {
@@ -65,12 +65,12 @@ bool Game::loadMedia()
     
     //Drawing::assets = loadTexture("assets.png");
     Drawing::assets = loadTexture("supermen1.png");
-    Drawing::blimp = loadTexture("Blimp.png");
+  
 
 
     gTexture = loadTexture("StartScreen.png");
     //gTexture = loadTexture("gameBG.jpg");
-    if(Drawing::assets==NULL || Drawing::blimp==NULL || gTexture==NULL)
+    if(Drawing::assets==NULL || gTexture==NULL)
     {
         printf("Unable to run due to error: %s\n",SDL_GetError());
         success =false;
