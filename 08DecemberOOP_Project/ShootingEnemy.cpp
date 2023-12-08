@@ -6,7 +6,7 @@ ShootingEnemy::ShootingEnemy(int x, int y) : Unit(){
     Unit::srcRect = {1383,843,94,129};
     //724,843,95,129
     //gun 41,818,77,155
-    Unit::moverRect = {20, 450, 50, 50};
+    Unit::moverRect = {20, 550, 50, 50};
 }
 
 bool ShootingEnemy::del_child(){
@@ -21,8 +21,8 @@ bool ShootingEnemy::del_child(){
 // fly() is overrided from the superclass
 void ShootingEnemy::fly(){
     // 
-    moverRect.x += speed;
-    speed += 0.5; //slowly increase speed as time passes to increase difficulty
+    moverRect.x += 15;
+    
     if (srcRect.x==724) {
         srcRect.x=1383;
         srcRect.y=843;
