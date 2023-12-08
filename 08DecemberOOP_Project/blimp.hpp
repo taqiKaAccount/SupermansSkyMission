@@ -2,11 +2,11 @@
 #include <SDL.h>
 #include "drawing.hpp"
 #include "unit.hpp"
-class Blimp : public Unit{
+class blimp : public Unit{
     public:
         char name = 'B';
         void fly();
-        Blimp(int x, int y);
+        blimp(int x, int y);
         bool del_child();
 
     private:

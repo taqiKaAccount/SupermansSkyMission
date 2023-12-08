@@ -12,10 +12,10 @@ Unit* ObjectCreator::getObject(int x, int y){
             animals = new RunningEnemy(x, y);
             break;
         case 2:
-            animals = new Plane(x, y);
+            animals = new blimp(x, y);
             break;
         case 3:
-            animals = new Blimp(x, y);
+            animals = new Plane(x, y);
             break;
     }
     

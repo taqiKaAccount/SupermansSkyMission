@@ -1,8 +1,8 @@
 #pragma once
-#include "Blimp.hpp"
+#include "blimp.hpp"
 
-bool Blimp::del_child(){
-    if(moverRect.x >= 999){
+bool blimp::del_child(){
+    if(moverRect.x < 0){
         return true;
     }
     else{
@@ -10,12 +10,18 @@ bool Blimp::del_child(){
     }
 }
 
-Blimp::Blimp(int x, int y) : Unit(){
+blimp::blimp(int x, int y) : Unit(){
     Unit::srcRect = {1187,297,321,113};
-    Unit::moverRect = {20, 750, 50, 50};
+    Unit::moverRect = {850, 300, 50, 50};
 }
-void Blimp::fly(){
-    moverRect.x -= 5;
+void blimp::fly(){
+    moverRect.x -= 15;
+    if (srcRect.x == 1187) {
+        srcRect.x=1187;
+        srcRect.y=297;
+        srcRect.w=321;
+        srcRect.h=113;
+        }
 }
 
 
