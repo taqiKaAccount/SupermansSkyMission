@@ -9,5 +9,5 @@ class RunningEnemy : public Unit{
     bool del_child();
     RunningEnemy(int x = 0, int y = 0);
     void fly();
-    int speed = 0.5;
+    int speed = 5;
 };

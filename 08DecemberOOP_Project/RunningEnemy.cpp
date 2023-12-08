@@ -20,12 +20,9 @@ bool RunningEnemy::del_child(){
 // fly() is overrided from the superclass
 void RunningEnemy::fly(){
     // 
-    moverRect.x -= speed;
-    speed += 0.5; //slowly increase speed as time passes to increase difficulty
-    if(moverRect.x > 999){
-        moverRect.x = 0;
-    }
-    else if (srcRect.x==334) {
+    moverRect.x -= 15; 
+     //slowly increase speed as time passes to increase difficulty
+    if (srcRect.x==334) {
         srcRect.x=26;
         srcRect.y=589;
         srcRect.w=147;

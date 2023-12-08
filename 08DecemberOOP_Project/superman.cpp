@@ -17,10 +17,10 @@ const SDL_Rect& Superman::getMoverRect() const {
 
 void Superman::draw(SDL_Renderer* gRenderer, SDL_Texture* assets) {
     SDL_RenderCopy(gRenderer, assets, &srcRect, &moverRect);
-    srcRect.x = 0;
-    srcRect.y = 237;
-    srcRect.w = 153;
-    srcRect.h = 84;
+    srcRect.x = 10;
+    srcRect.y = 26;
+    srcRect.w = 187;
+    srcRect.h = 119;
 }
 
 void Superman::up(SDL_Renderer* gRenderer, SDL_Texture* assets) {
