@@ -10,7 +10,6 @@ class Lazer : public Unit{
     Lazer(int x, int y, int lazerType);
 
     void Move();
-    void Draw();
     bool del_child();
 };
 // we can use one function for superman lazer and for the bullet
