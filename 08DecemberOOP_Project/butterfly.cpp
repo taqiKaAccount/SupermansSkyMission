@@ -1,7 +1,7 @@
 #pragma once
 #include "butterfly.hpp"
 
-//have to edit sit down when reach bottom of screen
+
 Butterfly::Butterfly(int x, int y) : Unit(){
     Unit::srcRect = {256, 24, 174, 134};
     Unit::moverRect = {x, y, 50, 50};

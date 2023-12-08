@@ -10,7 +10,6 @@
 //     Unit::moverRect = {x, y, 75, 75};
 // }
 
-
 const SDL_Rect& Superman::getMoverRect() const {
     return moverRect; // Assuming moverRect is a member variable in the Superman class
 }
