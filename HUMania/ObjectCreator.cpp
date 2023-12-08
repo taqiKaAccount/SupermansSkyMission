@@ -29,3 +29,10 @@ Unit* ObjectCreator::getObject(int x, int y) {
     return animals;
 }
 
+
+//in this function, instead of int x and int y
+//we will hardcode exact locations of where we want certain enemies to spawn
+//according to said spawn points we will control their movement pattern
+
+//for example, based on the butterfly movement pattern of going up and down
+//we will have planes go up and down, but in the opposite direction

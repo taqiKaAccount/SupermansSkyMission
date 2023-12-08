@@ -5,21 +5,7 @@
 #include "HUMania.hpp"
 using namespace std;
 
-// void HUMania::drawObjects(){
-
-//     for(int f=0; f<flyers.size(); f++){
-        
-//         flyers[f]->draw();
-        
-//         flyers[f]->fly();
-
-//         if(flyers[f]->del_child() == true){
-//             delete flyers[f]; 
-//             flyers.erase(flyers.begin() + f);
-//             cout << "Bee has been deleted"<<endl;
-//         }
-//     }
-// }
+//this function doesn't need to be touched at all
 void HUMania::drawObjects() {
     //Loop through the 'flyers' vector
     for (int f = 0; f < flyers.size(); f++) {
@@ -50,6 +36,8 @@ void HUMania::drawObjects() {
 
 
 // creates new objects
+// this here specifies where exactly the object would spawn, this should be set according
+//  to our exact needs rather than mouse click, which is already implemented in the other file
 void HUMania::createObject(int x, int y){
     std::cout << "Mouse clicked at: " << x << " -- " << y << std::endl;
     ObjectCreator obj;
@@ -57,6 +45,8 @@ void HUMania::createObject(int x, int y){
     flyers.push_back(flying_object);
 }
 
+
+//leave as is
 void HUMania::removeObject(Unit*){
     for(Unit *d: flyers){
         delete d;
