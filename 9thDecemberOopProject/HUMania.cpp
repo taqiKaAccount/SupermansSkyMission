@@ -95,6 +95,9 @@ void HUMania::checkSupermanCollision(Superman& superman)
             i--;
             
         }
+        //SDL_HasIntersection is a builtin function which checks for collisions of 2 sdl images
+        //rest of the code is essentially looping through our flyers array
+        //and comparing with superman image
     
 
     
