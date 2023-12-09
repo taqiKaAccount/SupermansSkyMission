@@ -25,7 +25,7 @@ class HUMania{
     // bool checkcollision(Superman superman, Unit* B) ;
     bool checkSupermanCollision(Superman& superman) ;
 
-    bool checkLazerCollision(vector<Unit*>) ;
+    bool checkLazerCollision(vector<Unit*> lazersTracker) ;
     //this will take the LazerVector
     //loop through both the vectors
     //if collision it will delete the enemy object only
