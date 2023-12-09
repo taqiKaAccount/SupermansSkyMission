@@ -7,7 +7,7 @@
 
 //new constructor with health
 
- Superman::Superman(int x, int y) : srcRect{10, 26, 187, 119}, moverRect{x, y, 75, 75},SupermanHealth(){}
+ Superman::Superman(int x, int y) : srcRect{10, 26, 187, 119}, moverRect{x, y, 75, 75}{}
 
 
 //laser superman coordinates  332,269,187,119

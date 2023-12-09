@@ -6,7 +6,7 @@ RunningEnemy::RunningEnemy(int x, int y) : Unit(){
     Unit::srcRect = {334,588,126,148};
     //26,589,147,152
     // Unit::moverRect = {850, 550, 50, 60};
-    Unit::moverRect = {850, 520, 120, 80};
+    Unit::moverRect = {850, 490, 150, 100};
 
 }
 //spawn position is set perfectly

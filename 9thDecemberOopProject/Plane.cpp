@@ -48,6 +48,7 @@ void Plane::fly() {
     }
 
     moverRect.x -= speed + rand() % 10;
+    speed = speed + 0.25 ; 
 }
 
 

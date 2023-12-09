@@ -17,6 +17,7 @@ blimp::blimp(int x, int y) : Unit() {
 
 void blimp::fly() {
     moverRect.x -= speed;
+    speed = speed + 0.25 ; 
 
     // Adjust the flying logic based on the direction
     if (flying_up == true) {

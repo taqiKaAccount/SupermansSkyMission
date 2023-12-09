@@ -125,6 +125,7 @@ void Game::run( )
     bool quit = false;
     SDL_Event e;
     bool start = false;
+    bool gameRunning = true;
 
     health supermanHealth;
     HUMania humania;
@@ -179,29 +180,24 @@ void Game::run( )
                     case SDLK_UP:
                         std::cout << "Up arrow key pressed!" << std::endl;
                         supermanObject.up(Drawing::gRenderer , Drawing::assets);
-                        // humania.checkSupermanCollision(supermanObject); 
-                        //checking is health working
-                        // supermanObject.testHealth();
+                        
                         break;
                     case SDLK_DOWN:
                         std::cout << "Down arrow key pressed!" << std::endl;
                         supermanObject.down(Drawing::gRenderer , Drawing::assets);
-                        // humania.checkSupermanCollision(supermanObject); 
-                        // supermanObject.testHealth();
+                        
 
                         break;
                     case SDLK_LEFT:
                         std::cout << "Left arrow key pressed!" << std::endl;
                         supermanObject.left(Drawing::gRenderer , Drawing::assets);
-                        // humania.checkSupermanCollision(supermanObject); 
-                        // supermanObject.testHealth();
+                        
 
                         break;
                     case SDLK_RIGHT:
                         std::cout << "Right arrow key pressed!" << std::endl;
                         supermanObject.right(Drawing::gRenderer , Drawing::assets);
-                        // humania.checkSupermanCollision(supermanObject); 
-                        // supermanObject.testHealth();
+                        
                         
                         break;
                     case SDLK_z:
@@ -210,26 +206,32 @@ void Game::run( )
                         supermanObject.animation(Drawing::gRenderer,Drawing::assets);
 
                         lazermachine.createObject(supermanObject.getMoverRectX(), supermanObject.getMoverRectY());
+                        //similar working to HuMania, but for lazers
                         // supermanObject.draw(Drawing::gRenderer , Drawing::assets);
                         break;
             }
         }
 
-			if (e.type == SDL_KEYDOWN && e.key.keysym.sym == SDLK_q) {
+			if (e.type == SDL_KEYDOWN && e.key.keysym.sym == SDLK_q or (supermanHealth.getLife()<=0)) {
 				SDL_DestroyTexture(Drawing::assets);
                 gTexture = loadTexture("SuperManGameOver.png");
+                gameRunning = false;
             }
 
         }
         SDL_RenderClear(Drawing::gRenderer); //removes everything from renderer
         SDL_RenderCopy(Drawing::gRenderer, gTexture, NULL, NULL);//Draws background to renderer
         //***********************draw the objects here********************
-        humania.drawObjects();
-        DecreaseHealth = humania.checkSupermanCollision(supermanObject); 
-        supermanHealth.reduceHealth(DecreaseHealth);
-        supermanHealth.testHealth();
-        lazermachine.drawObjects();
-        supermanObject.draw(Drawing::gRenderer, Drawing::assets);
+        if (gameRunning)
+        {
+            humania.drawObjects();
+            DecreaseHealth = humania.checkSupermanCollision(supermanObject); 
+            supermanHealth.reduceHealth(DecreaseHealth);
+            supermanHealth.testHealth();
+            lazermachine.drawObjects();
+            supermanObject.draw(Drawing::gRenderer, Drawing::assets);
+        }
+        
         //****************************************************************
         SDL_RenderPresent(Drawing::gRenderer); //displays the updated renderer
         SDL_Delay(100); //causes sdl engine to delay for specified miliseconds
