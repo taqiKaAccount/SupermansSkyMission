@@ -47,3 +47,8 @@ void LazerMaker::removeObject(Unit*){
     }
     lazerVector.clear();
 }
+
+vector<Unit*> LazerMaker::returnLazerVector()
+{
+    return lazerVector ;
+};

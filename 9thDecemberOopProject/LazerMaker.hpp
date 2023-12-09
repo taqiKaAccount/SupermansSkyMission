@@ -15,4 +15,5 @@ class LazerMaker{
     void drawObjects(); 
     void createObject(int, int);
     void removeObject(Unit*);
+    vector<Unit*> returnLazerVector();
 };
