@@ -91,24 +91,63 @@ void HUMania::removeObject(Unit*){
 //     // if they are return true
 // };
 
-void HUMania::checkSupermanCollision(Superman* superman)
+void HUMania::checkSupermanCollision(Superman& superman)
 {
-    //SDL_Rect supermanRect = {superman.getMoverRectX(), superman.getMoverRectY(), 75, 75};
+    SDL_Rect supermanRect = {superman.getMoverRectX(), superman.getMoverRectY(), 75, 75};
+    
 
     // Iterate through the flyers vector and check collisions with Superman
+    // for (size_t i = 0; i < flyers.size(); ++i) {
+    //     Unit* flyer = flyers[i];
+    //     // Unit* flyerRect = {flyer->getMoverRectX(), flyer->getMoverRectY(), flyer->getMoverRectW(), flyer->getMoverRectH()};
+    //     // std::cout<<flyerRect.x;
+    //     // Unit* flyerRect = flyer;
+
+    //     // Check collision between Superman and the flyer
+    //     // if (checkcollision(superman, &flyerRect)) {
+    //     //     flyer->del_child();
+    //     // }
+
+    //     if (superman.getMoverRectX() == flyer->getMoverRectX() and superman.getMoverRectY() == flyer->getMoverRectY()) {
+    //         flyer->del_child();
+    //     }
+    // }
+
+    std::vector<Point> flyerPositions;
+    Point supermanPosition;
+    supermanPosition.x = superman.getMoverRectX();
+    supermanPosition.y = superman.getMoverRectY();
     for (size_t i = 0; i < flyers.size(); ++i) {
         Unit* flyer = flyers[i];
-        // Unit* flyerRect = {flyer->getMoverRectX(), flyer->getMoverRectY(), flyer->getMoverRectW(), flyer->getMoverRectH()};
-        // std::cout<<flyerRect.x;
-        Unit* flyerRect = flyer;
-
-        // Check collision between Superman and the flyer
-        // if (checkcollision(superman, &flyerRect)) {
-        //     flyer->del_child();
-        // }
-
-        if (checkcollision(superman, &flyerRect)) {
-            flyer->del_child();
+        Point flyerPosition;
+        SDL_Rect FlyerRect = {flyer->getMoverRectX(), flyer->getMoverRectY(), flyer->getMoverRectW(), flyer->getMoverRectH()};
+        // flyerPosition.x = flyer->getMoverRectX();
+        // flyerPosition.y = flyer->getMoverRectY();
+        // flyerPositions.push_back(flyerPosition);
+        if (SDL_HasIntersection(&supermanRect, &FlyerRect) == SDL_TRUE) {
+            delete flyers[i];
+            flyers.erase(flyers.begin() + i);
+            cout << "collision has been detected" << endl;
+            i--;
+            
         }
+    
+    // for (const auto& position : flyerPositions) {
+    //     // if (position.x == supermanPosition.x && position.y == supermanPosition.y) {
+    //     //     delete flyers[i];
+    //     //     flyers.erase(flyers.begin() + i);
+    //     //     cout << "collision has been detected" << endl;
+    //     //     i--;
+            
+    //     // }
+        
+        
+    // }
+
     }
+
+    // Checking if [superman.getMoverRectX(), superman.getMoverRectY()] exists within flyerPositions
+    
+
+    
 }
