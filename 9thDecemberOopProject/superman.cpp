@@ -83,30 +83,3 @@ void Superman::animation(SDL_Renderer* gRenderer, SDL_Texture* assets) {
     
 }
 
-//superman health
-
-void Superman::healthcheck(){
-    // int life = SupermanHealth.getLife();
-    // SupermanHealth.reduceHealth(true);
-    SupermanHealth.reduceHealth(false);
-}
-int Superman::healthleft(){
-    healthcheck();
-    SupermanHealth.getLife();
-}
-//just to check if health is working
-void Superman::testHealth() {
-    // Access health-related functions
-    healthcheck();
-    int life = SupermanHealth.getLife();
-    std::cout << "Superman's current life: " << life << "\n";
-
-    // Perform some actions based on health
-    if (life <= 0) {
-        std::cout << "Superman is defeated!" << "\n";
-        // Perform additional actions when Superman is defeated
-    } else {
-        std::cout << "Superman is still fighting!" << "\n";
-        // Perform additional actions when Superman is still alive
-    }
-}

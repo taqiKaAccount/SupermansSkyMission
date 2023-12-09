@@ -102,7 +102,7 @@ void HUMania::removeObject(Unit*){
 // if they objects overlap, call the removeObject function and return true
 // return true is so that we can change the health of superman using this as a condition
 
-void HUMania::checkSupermanCollision(Superman& superman)
+bool HUMania::checkSupermanCollision(Superman& superman)
 {
     SDL_Rect supermanRect = {superman.getMoverRectX(), superman.getMoverRectY(), 75, 75};
     
@@ -116,16 +116,14 @@ void HUMania::checkSupermanCollision(Superman& superman)
             flyers.erase(flyers.begin() + i);
             cout << "collision has been detected" << endl;
             i--;
+            return true;
             
         }
         //SDL_HasIntersection is a builtin function which checks for collisions of 2 sdl images
         //rest of the code is essentially looping through our flyers array
         //and comparing with superman image
-    
-
-    
     }
-    
+    return false;
 }
 
 //work for collisions with flying objects

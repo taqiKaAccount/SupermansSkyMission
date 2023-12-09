@@ -23,7 +23,7 @@ class HUMania{
     void removeObject(Unit*);
 
     // bool checkcollision(Superman superman, Unit* B) ;
-    void checkSupermanCollision(Superman& superman) ;
+    bool checkSupermanCollision(Superman& superman) ;
 
     // bool checkCollision(SDL_Rect, SDL_Rect);
 };

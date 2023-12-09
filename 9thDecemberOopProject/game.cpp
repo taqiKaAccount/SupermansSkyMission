@@ -5,6 +5,7 @@
 #include "superman.hpp"
 #include "Lazer.hpp"
 #include "LazerMaker.hpp"
+#include "health.hpp"
 
 
 SDL_Renderer* Drawing::gRenderer = NULL;
@@ -124,9 +125,11 @@ void Game::run( )
     bool quit = false;
     SDL_Event e;
     bool start = false;
-    
+
+    health supermanHealth;
     HUMania humania;
     LazerMaker lazermachine ;
+    bool DecreaseHealth = false;
     Superman supermanObject(-100 , 200);
     Uint32 lastSpawnTimeOfFlying = SDL_GetTicks(); // Initialize lastSpawnTime
     Uint32 lastSpawnTimeOfWalking = SDL_GetTicks();
@@ -157,7 +160,7 @@ void Game::run( )
 
         //Handle events on queue
         while( SDL_PollEvent( &e ) != 0 )
-        {      
+        {   
             //User requests quit
             if( e.type == SDL_QUIT )
             {
@@ -178,27 +181,27 @@ void Game::run( )
                         supermanObject.up(Drawing::gRenderer , Drawing::assets);
                         // humania.checkSupermanCollision(supermanObject); 
                         //checking is health working
-                        supermanObject.testHealth();
+                        // supermanObject.testHealth();
                         break;
                     case SDLK_DOWN:
                         std::cout << "Down arrow key pressed!" << std::endl;
                         supermanObject.down(Drawing::gRenderer , Drawing::assets);
                         // humania.checkSupermanCollision(supermanObject); 
-                        supermanObject.testHealth();
+                        // supermanObject.testHealth();
 
                         break;
                     case SDLK_LEFT:
                         std::cout << "Left arrow key pressed!" << std::endl;
                         supermanObject.left(Drawing::gRenderer , Drawing::assets);
                         // humania.checkSupermanCollision(supermanObject); 
-                        supermanObject.testHealth();
+                        // supermanObject.testHealth();
 
                         break;
                     case SDLK_RIGHT:
                         std::cout << "Right arrow key pressed!" << std::endl;
                         supermanObject.right(Drawing::gRenderer , Drawing::assets);
                         // humania.checkSupermanCollision(supermanObject); 
-                        supermanObject.testHealth();
+                        // supermanObject.testHealth();
                         
                         break;
                     case SDLK_z:
@@ -222,7 +225,9 @@ void Game::run( )
         SDL_RenderCopy(Drawing::gRenderer, gTexture, NULL, NULL);//Draws background to renderer
         //***********************draw the objects here********************
         humania.drawObjects();
-        humania.checkSupermanCollision(supermanObject); 
+        DecreaseHealth = humania.checkSupermanCollision(supermanObject); 
+        supermanHealth.reduceHealth(DecreaseHealth);
+        supermanHealth.testHealth();
         lazermachine.drawObjects();
         supermanObject.draw(Drawing::gRenderer, Drawing::assets);
         //****************************************************************

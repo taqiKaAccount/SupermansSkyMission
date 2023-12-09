@@ -25,16 +25,10 @@ public:
     int getMoverRectX() const;
     int getMoverRectY() const;
 
-    //just for checking
-    void healthcheck();
-    void testHealth();
-    int healthleft();
-
 private:
     SDL_Rect srcRect;
     SDL_Rect moverRect;
-    //
-    health SupermanHealth;
+
 };
 
 #endif // SUPERMAN_HPP
