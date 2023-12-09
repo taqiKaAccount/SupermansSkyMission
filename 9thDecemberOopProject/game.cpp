@@ -6,6 +6,7 @@
 #include "Lazer.hpp"
 #include "LazerMaker.hpp"
 #include "health.hpp"
+#include "HealthDisplay.hpp"
 
 
 SDL_Renderer* Drawing::gRenderer = NULL;
@@ -134,6 +135,9 @@ void Game::run( )
     bool IncreaseScore = true;
 
     Superman supermanObject(-100 , 200);
+    
+    HealthDisplay displayHealth;
+
     Uint32 lastSpawnTimeOfFlying = SDL_GetTicks(); // Initialize lastSpawnTime
     Uint32 lastSpawnTimeOfWalking = SDL_GetTicks();
     while( !quit )

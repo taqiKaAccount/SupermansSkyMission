@@ -13,7 +13,9 @@ class HealthDisplay{
 
     HealthDisplay();
 
-    void RedrawHearts(int heartsleft) ;
+    void RedrawHearts(SDL_Renderer* gRenderer, SDL_Texture* assets ,int heartsleft) ;
+
+  
 
 
-}
+};

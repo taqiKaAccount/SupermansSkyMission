@@ -3,10 +3,6 @@
 #include "unit.hpp"  // Make sure to include the Unit class or define the necessary structs here
 
 
-//  Superman::Superman(int x, int y) : srcRect{10, 26, 187, 119}, moverRect{x, y, 75, 75} {}
-
-//new constructor with health
-
  Superman::Superman(int x, int y) : srcRect{10, 26, 187, 119}, moverRect{x, y, 75, 75}{}
 
 
