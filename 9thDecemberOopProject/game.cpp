@@ -199,8 +199,6 @@ void Game::run( )
                         supermanObject.right(Drawing::gRenderer , Drawing::assets);
                         humania.checkSupermanCollision(supermanObject); 
                         supermanObject.testHealth();
-
-
                         
                         break;
                     case SDLK_z:
