@@ -127,11 +127,9 @@ bool HUMania::checkSupermanCollision(Superman& superman)
 }
 
 bool HUMania::checkLazerCollision(vector<Unit*> lazersTracker){
-    SDL_Rect supermanRect = {superman.getMoverRectX(), superman.getMoverRectY(), 75, 75};
-    
     for (size_t j = 0; j < lazersTracker.size(); j++)
     {
-        Unit* thisLazer = lazersTracker[i];
+        Unit* thisLazer = lazersTracker[j];
          SDL_Rect LazerRect = {thisLazer->getMoverRectX(), thisLazer->getMoverRectY(), thisLazer->getMoverRectW(), thisLazer->getMoverRectH()};
 
         for (size_t i = 0; i < flyers.size(); ++i) 
@@ -142,7 +140,7 @@ bool HUMania::checkLazerCollision(vector<Unit*> lazersTracker){
             if (SDL_HasIntersection(&LazerRect, &FlyerRect) == SDL_TRUE) {
                 delete flyers[i];
                 flyers.erase(flyers.begin() + i);
-                cout << "Lazer has Been" << endl;
+                cout << "Lazer has Been detected" << endl;
                 i--;
                 return true;
                 
