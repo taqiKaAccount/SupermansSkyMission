@@ -4,7 +4,7 @@
 
 Plane::Plane(int x, int y) : Unit(){
     Unit::srcRect = {307,92,240,86};
-    Unit::moverRect = {850, 50, 75, 75};
+    Unit::moverRect = {850, 50, 75, 50};
 }
 //spawn position for plane is set
 
