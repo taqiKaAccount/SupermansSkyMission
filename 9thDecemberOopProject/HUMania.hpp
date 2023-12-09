@@ -19,6 +19,8 @@ class HUMania{
     void createObjectwalking(int, int);
     void createObjectflying(int, int);
     void removeObject(Unit*);
+
+    bool checkcollision(const SDL_Rect* A, SDL_Rect* B)
 };
 
 //HuMania will get repurposed as our "Create and remove enemy sprites Class"

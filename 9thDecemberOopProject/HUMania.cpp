@@ -72,3 +72,17 @@ void HUMania::removeObject(Unit*){
     }
     flyers.clear();
 }
+
+
+// so idea is to traverse through the vector and at each moment
+// compare the sdl rect of superman with the current vector object via pointers
+// if they objects overlap, call the removeObject function and return true
+// return true is so that we can change the health of superman using this as a condition
+bool HUMania::checkcollision(const SDL_Rect* A, SDL_Rect* B){
+
+
+
+
+
+
+};

@@ -5,8 +5,11 @@ int health::getLife() {
     return life ;
 };
 
-void health::reduceHealth() {
-    life = life -1;
+void health::reduceHealth(bool DidCollisionOccur) {
+    if ( DidCollisionOccur )
+    {
+        life = life -1;
+    }
     
 }
 
@@ -16,3 +19,6 @@ void health::reduceHealth() {
 
 
 // }
+// this will be edited to show hearts on the screen
+// based on the life of superman
+// update the src rect or something idk
