@@ -126,42 +126,25 @@ bool HUMania::checkSupermanCollision(Superman& superman)
     return false;
 }
 
-//work for collisions with flying objects
+bool HUMania::checkLazerCollision(vector<Unit*>){
+    SDL_Rect supermanRect = {superman.getMoverRectX(), superman.getMoverRectY(), 75, 75};
+    
+    
+    for (size_t i = 0; i < flyers.size(); ++i) {
+        Unit* flyer = flyers[i];
+        SDL_Rect FlyerRect = {flyer->getMoverRectX(), flyer->getMoverRectY(), flyer->getMoverRectW(), flyer->getMoverRectH()};
 
-// bool HUMania::checkCollision(SDL_Rect a, SDL_Rect b) {
-//     // Similar collision detection logic as in Interstellar
-//     int leftA, leftB;
-//     int rightA, rightB;
-//     int topA, topB;
-//     int bottomA, bottomB;
-
-//     leftA = a.x;
-//     rightA = a.x + a.w;
-//     topA = a.y;
-//     bottomA = a.y + a.h;
-
-//     leftB = b.x;
-//     rightB = b.x + b.w;
-//     topB = b.y;
-//     bottomB = b.y + b.h;
-
-//     if (bottomA <= topB) {
-//         return false;
-//     }
-
-//     if (topA >= bottomB) {
-//         return false;
-//     }
-
-//     if (rightA <= leftB) {
-//         return false;
-//     }
-
-//     if (leftA >= rightB) {
-//         return false;
-//     }
-
-//     return true;
-// }
-
-
+        if (SDL_HasIntersection(&supermanRect, &FlyerRect) == SDL_TRUE) {
+            delete flyers[i];
+            flyers.erase(flyers.begin() + i);
+            cout << "collision has been detected" << endl;
+            i--;
+            return true;
+            
+        }
+        //SDL_HasIntersection is a builtin function which checks for collisions of 2 sdl images
+        //rest of the code is essentially looping through our flyers array
+        //and comparing with superman image
+    }
+    return false;
+};
