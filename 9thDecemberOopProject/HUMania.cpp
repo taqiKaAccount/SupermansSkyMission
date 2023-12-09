@@ -78,25 +78,36 @@ void HUMania::removeObject(Unit*){
 // compare the sdl rect of superman with the current vector object via pointers
 // if they objects overlap, call the removeObject function and return true
 // return true is so that we can change the health of superman using this as a condition
-bool HUMania::checkcollision(const SDL_Rect* A, SDL_Rect* B){
-    return (A->x < B->x + B->w && A->x + A->w > B->x &&
-            A->y < B->y + B->h && A->y + A->h > B->y);
-    // this checks if the rectangles of both the objects are overlapping
-    // if they are return true
-};
+// bool HUMania::checkcollision(Superman superman, Unit* B){
+//     if (superman.getMoverRectX() == B->getMoverRectX() and superman.getMoverRectY() == B.getMoverRectY())
+//     {
+//         return true ;
+//     }
+//     else{return false; }
+//     // int hello = A->getMoverRectX();
+//     // bool collided = SDL_HasIntersection(A, B);
+//     // return collided;
+//     // this checks if the rectangles of both the objects are overlapping
+//     // if they are return true
+// };
 
-void HUMania::checkSupermanCollision(Superman& superman)
+void HUMania::checkSupermanCollision(Superman* superman)
 {
-    SDL_Rect supermanRect = {superman.getMoverRectX(), superman.getMoverRectY(), 75, 75};
+    //SDL_Rect supermanRect = {superman.getMoverRectX(), superman.getMoverRectY(), 75, 75};
 
     // Iterate through the flyers vector and check collisions with Superman
     for (size_t i = 0; i < flyers.size(); ++i) {
         Unit* flyer = flyers[i];
-        SDL_Rect flyerRect = {flyer->getMoverRectX(), flyer->getMoverRectY(), flyer->getMoverRectW(), flyer->getMoverRectH()};
-        std::cout<<"CheckingFunction is passing"
+        // Unit* flyerRect = {flyer->getMoverRectX(), flyer->getMoverRectY(), flyer->getMoverRectW(), flyer->getMoverRectH()};
+        // std::cout<<flyerRect.x;
+        Unit* flyerRect = flyer;
 
         // Check collision between Superman and the flyer
-        if (checkcollision(&supermanRect, &flyerRect)) {
+        // if (checkcollision(superman, &flyerRect)) {
+        //     flyer->del_child();
+        // }
+
+        if (checkcollision(superman, &flyerRect)) {
             flyer->del_child();
         }
     }

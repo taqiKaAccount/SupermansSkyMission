@@ -176,18 +176,22 @@ void Game::run( )
                     case SDLK_UP:
                         std::cout << "Up arrow key pressed!" << std::endl;
                         supermanObject.up(Drawing::gRenderer , Drawing::assets);
+                        humania.checkSupermanCollision(supermanObject); 
                         break;
                     case SDLK_DOWN:
                         std::cout << "Down arrow key pressed!" << std::endl;
                         supermanObject.down(Drawing::gRenderer , Drawing::assets);
+                        humania.checkSupermanCollision(supermanObject); 
                         break;
                     case SDLK_LEFT:
                         std::cout << "Left arrow key pressed!" << std::endl;
                         supermanObject.left(Drawing::gRenderer , Drawing::assets);
+                        humania.checkSupermanCollision(supermanObject); 
                         break;
                     case SDLK_RIGHT:
                         std::cout << "Right arrow key pressed!" << std::endl;
                         supermanObject.right(Drawing::gRenderer , Drawing::assets);
+                        humania.checkSupermanCollision(supermanObject); 
 
                         
                         break;
