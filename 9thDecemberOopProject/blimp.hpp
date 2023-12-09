@@ -4,6 +4,7 @@
 #include "unit.hpp"
 class blimp : public Unit{
     int speed = 15;
+    bool flying_up = false;
     public:
         void fly();
         blimp(int x, int y);

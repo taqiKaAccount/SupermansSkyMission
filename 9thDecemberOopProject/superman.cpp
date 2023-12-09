@@ -90,7 +90,10 @@ void Superman::healthcheck(){
     // SupermanHealth.reduceHealth(true);
     SupermanHealth.reduceHealth(true);
 }
-
+int Superman::healthleft(){
+    healthcheck();
+    SupermanHealth.getLife();
+}
 //just to check if health is working
 void Superman::testHealth() {
     // Access health-related functions
