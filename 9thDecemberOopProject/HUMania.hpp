@@ -24,6 +24,8 @@ class HUMania{
 
     // bool checkcollision(Superman superman, Unit* B) ;
     void checkSupermanCollision(Superman& superman) ;
+
+    // bool checkCollision(SDL_Rect, SDL_Rect);
 };
 
 //HuMania will get repurposed as our "Create and remove enemy sprites Class"

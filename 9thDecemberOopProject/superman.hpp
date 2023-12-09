@@ -5,6 +5,9 @@
 
 #include <SDL.h>
 #include <vector>
+#include <iostream>
+//
+#include "health.hpp"
 //class Laser; // Forward declaration
 class Superman{
 public:
@@ -22,9 +25,15 @@ public:
     int getMoverRectX() const;
     int getMoverRectY() const;
 
+    //just for checking
+    void healthcheck();
+    void testHealth();
+
 private:
     SDL_Rect srcRect;
     SDL_Rect moverRect;
+    //
+    health SupermanHealth;
 };
 
 #endif // SUPERMAN_HPP

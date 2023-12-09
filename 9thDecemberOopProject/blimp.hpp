@@ -8,4 +8,7 @@ class blimp : public Unit{
         void fly();
         blimp(int x, int y);
         bool del_child();
+        //
+        // int getMoverRectX() const;
+        // int getMoverRectY() const;
 };

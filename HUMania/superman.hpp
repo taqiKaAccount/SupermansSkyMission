@@ -19,6 +19,8 @@ public:
     bool supermanCollision(const SDL_Rect* A, SDL_Rect* B);
     void animation(SDL_Renderer* gRenderer, SDL_Texture* assets,std::vector<Laser>& lasers);
     const SDL_Rect& getMoverRect() const;
+    //
+    void decreaseHealth();
 
 private:
     SDL_Rect srcRect;

@@ -69,3 +69,7 @@ void Superman::animation(SDL_Renderer* gRenderer, SDL_Texture* assets,std::vecto
     lasers.push_back(Laser(moverRect.x, moverRect.y));
     
 }
+/// health working
+void Superman::decreaseHealth(){
+    health-=1;
+}

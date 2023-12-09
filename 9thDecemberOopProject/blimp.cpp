@@ -23,5 +23,13 @@ void blimp::fly(){
         srcRect.h=113;
         }
 }
+// for collisions doing here 
+// int blimp::getMoverRectX() const {
+//     return moverRect.x;
+// }
+
+// int blimp::getMoverRectY() const {
+//     return moverRect.y;
+// }
 
 

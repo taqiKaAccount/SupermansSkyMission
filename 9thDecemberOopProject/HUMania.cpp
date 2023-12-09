@@ -40,18 +40,41 @@ void HUMania::drawObjects() {
 //  to our exact needs rather than mouse click, which is already implemented in the other file
 void HUMania::createObjectflying(int x, int y){
     // std::cout << "Mouse clicked at: " << x << " -- " << y << std::endl;
-
-
     ObjectCreator obj;
     
     Unit *flying_object = obj.getObjectflying(x, y);
     flyers.push_back(flying_object);
     
-
-    
-
-    
 }
+
+
+// Modify the createObjectflying function to check for collisions
+// void HUMania::createObjectflying(int x, int y) {
+//     ObjectCreator obj;
+
+//     // Create a flying object
+//     Unit* flying_object = obj.getObjectflying(x, y);
+
+//     // Check for collisions with existing objects
+//     for (size_t i = 0; i < flyers.size(); ++i) {
+//         Unit* existingObject = flyers[i];
+//         SDL_Rect newObjectRect = {flying_object->getMoverRectX(), flying_object->getMoverRectY(), flying_object->getMoverRectW(), flying_object->getMoverRectH()};
+//         SDL_Rect existingObjectRect = {existingObject->getMoverRectX(), existingObject->getMoverRectY(), existingObject->getMoverRectW(), existingObject->getMoverRectH()};
+
+//         // If a collision is detected, don't add the new object and return
+//         if (checkCollision(newObjectRect, existingObjectRect)) {
+//             delete flying_object;  // Don't forget to free the memory
+//             cout << "Collision detected, flying object not created" << endl;
+//             return;
+//         }
+//     }
+
+//     // No collision detected, add the new object to the vector
+//     flyers.push_back(flying_object);
+// }
+
+
+
 void HUMania::createObjectwalking(int x, int y){
     // std::cout << "Mouse clicked at: " << x << " -- " << y << std::endl;
 
@@ -104,3 +127,43 @@ void HUMania::checkSupermanCollision(Superman& superman)
     }
     
 }
+
+//work for collisions with flying objects
+
+// bool HUMania::checkCollision(SDL_Rect a, SDL_Rect b) {
+//     // Similar collision detection logic as in Interstellar
+//     int leftA, leftB;
+//     int rightA, rightB;
+//     int topA, topB;
+//     int bottomA, bottomB;
+
+//     leftA = a.x;
+//     rightA = a.x + a.w;
+//     topA = a.y;
+//     bottomA = a.y + a.h;
+
+//     leftB = b.x;
+//     rightB = b.x + b.w;
+//     topB = b.y;
+//     bottomB = b.y + b.h;
+
+//     if (bottomA <= topB) {
+//         return false;
+//     }
+
+//     if (topA >= bottomB) {
+//         return false;
+//     }
+
+//     if (rightA <= leftB) {
+//         return false;
+//     }
+
+//     if (leftA >= rightB) {
+//         return false;
+//     }
+
+//     return true;
+// }
+
+

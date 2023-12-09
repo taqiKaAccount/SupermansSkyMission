@@ -3,7 +3,13 @@
 #include "unit.hpp"  // Make sure to include the Unit class or define the necessary structs here
 
 
- Superman::Superman(int x, int y) : srcRect{10, 26, 187, 119}, moverRect{x, y, 75, 75} {}
+//  Superman::Superman(int x, int y) : srcRect{10, 26, 187, 119}, moverRect{x, y, 75, 75} {}
+
+//new constructor with health
+
+ Superman::Superman(int x, int y) : srcRect{10, 26, 187, 119}, moverRect{x, y, 75, 75},SupermanHealth(){}
+
+
 //laser superman coordinates  332,269,187,119
 
 // Superman::Superman(int x, int y) : public Unit() {
@@ -77,3 +83,27 @@ void Superman::animation(SDL_Renderer* gRenderer, SDL_Texture* assets) {
     
 }
 
+//superman health
+
+void Superman::healthcheck(){
+    // int life = SupermanHealth.getLife();
+    // SupermanHealth.reduceHealth(true);
+    SupermanHealth.reduceHealth(true);
+}
+
+//just to check if health is working
+void Superman::testHealth() {
+    // Access health-related functions
+    healthcheck();
+    int life = SupermanHealth.getLife();
+    std::cout << "Superman's current life: " << life << "\n";
+
+    // Perform some actions based on health
+    if (life <= 0) {
+        std::cout << "Superman is defeated!" << "\n";
+        // Perform additional actions when Superman is defeated
+    } else {
+        std::cout << "Superman is still fighting!" << "\n";
+        // Perform additional actions when Superman is still alive
+    }
+}

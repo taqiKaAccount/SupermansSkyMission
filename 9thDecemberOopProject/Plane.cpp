@@ -41,4 +41,11 @@ void Plane::fly(){
     moverRect.x -= speed+rand()%10; 
 
 }
+//// 
+// int Plane::getMoverRectX() const {
+//     return moverRect.x;
+// }
 
+// int Plane::getMoverRectY() const {
+//     return moverRect.y;
+// }
