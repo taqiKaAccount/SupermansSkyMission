@@ -24,10 +24,6 @@ class HUMania{
 
     // bool checkcollision(Superman superman, Unit* B) ;
     void checkSupermanCollision(Superman& superman) ;
-    struct Point {
-    int x;
-    int y;
-    };
 };
 
 //HuMania will get repurposed as our "Create and remove enemy sprites Class"
