@@ -15,7 +15,8 @@ blimp::blimp(int x, int y) : Unit(){
     Unit::moverRect = {850, 300, 100, 60};
 }
 void blimp::fly(){
-    moverRect.x -= 15;
+    moverRect.x -= speed;
+    speed -= 0.25
     if (srcRect.x == 1187) {
         srcRect.x=1187;
         srcRect.y=297;
