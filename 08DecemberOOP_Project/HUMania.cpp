@@ -5,7 +5,8 @@
 #include "HUMania.hpp"
 using namespace std;
 
-//this function doesn't need to be touched at all
+// this function may need to be called in a different manner to check for collisions
+
 void HUMania::drawObjects() {
     //Loop through the 'flyers' vector
     for (int f = 0; f < flyers.size(); f++) {
@@ -25,7 +26,7 @@ void HUMania::drawObjects() {
             //erase the flyer from the vector
             flyers.erase(flyers.begin() + f);
             
-            cout << "Bee has been deleted" << endl;
+            cout << "Enemy has been deleted" << endl;
             
             //move the iterator one step back to correctly loop through the vector
             //because an element has been erased
@@ -36,11 +37,9 @@ void HUMania::drawObjects() {
 
 
 // creates new objects
-// this here specifies where exactly the object would spawn, this should be set according
-//  to our exact needs rather than mouse click, which is already implemented in the other file
+// int x and y don't do anything, these have to be removed later
+//enemy spawning locations are built into their individual classes themselves
 void HUMania::createObject(int x, int y){
-    // std::cout << "Mouse clicked at: " << x << " -- " << y << std::endl;
-
 
     ObjectCreator obj;
 

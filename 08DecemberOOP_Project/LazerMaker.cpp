@@ -38,7 +38,8 @@ void LazerMaker::createObject(int x, int y){
     Unit *flying_object = new Lazer(x, y);
     lazerVector.push_back(flying_object);
 }
-
+// the x and y values are the superman moverrect.x and .y
+//so the lazer spanws on supermans location
 
 //leave as is
 void LazerMaker::removeObject(Unit*){
