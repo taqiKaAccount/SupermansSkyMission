@@ -234,8 +234,15 @@ void Game::run( )
         {
             humania.drawObjects();
             IncreaseScore = humania.checkLazerCollision(lazermachine.returnLazerVector()); 
-            DecreaseHealth = humania.checkSupermanCollision(supermanObject); 
+            DecreaseHealth = humania.checkSupermanCollision(supermanObject);
+
             supermanHealth.reduceHealth(DecreaseHealth);
+
+            // if (DecreaseHealth)
+            // {
+            //     supermanHealth--;
+            // }
+            
 
             displayHealth.RedrawHearts(Drawing::gRenderer, Drawing::assets, supermanHealth.getLife());
             supermanHealth.testHealth();

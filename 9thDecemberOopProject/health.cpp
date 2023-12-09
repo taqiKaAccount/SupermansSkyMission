@@ -14,6 +14,8 @@ void health::reduceHealth(bool DidCollisionOccur) {
     
 }
 
+
+
 // void health::healthcheck(){
 //     // int life = SupermanHealth.getLife();
 //     // SupermanHealth.reduceHealth(true);
