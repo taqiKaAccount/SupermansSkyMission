@@ -72,10 +72,18 @@ void Superman::createObject(int x, int y) {
 // }
 
 void Superman::animation(SDL_Renderer* gRenderer, SDL_Texture* assets) {
-    
-    srcRect = {-332, -269, 187, 119};
+    if (srcRect.x==10){
+        srcRect.x = 332;
+        srcRect.y = 269;
+        srcRect.w = 187;
+        srcRect.h = 119;
+    }
+    //srcRect = {332, 269, 187, 119};
     // moverRect = {getMoverRectX(), getMoverRectY(), 75, 75};
     SDL_RenderCopy(gRenderer, assets, &srcRect, &moverRect);
     
-}
+ }
+// In Superman class
+
+
 

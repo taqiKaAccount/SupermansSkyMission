@@ -62,10 +62,14 @@ bool Superman::supermanCollision(const SDL_Rect* A, SDL_Rect* B) {
 
 void Superman::animation(SDL_Renderer* gRenderer, SDL_Texture* assets,std::vector<Laser>& lasers) {
     SDL_RenderCopy(gRenderer, assets, &srcRect, &moverRect);
-    srcRect.x = 2;
-    srcRect.y = 361;
-    srcRect.w = 159;
-    srcRect.h = 124;
+    // srcRect.x = 2;
+    // srcRect.y = 361;
+    // srcRect.w = 159;
+    // srcRect.h = 124;
+    srcRect.x = 332;
+    srcRect.y = 269;
+    srcRect.w = 187;
+    srcRect.h = 119;
     lasers.push_back(Laser(moverRect.x, moverRect.y));
     
 }

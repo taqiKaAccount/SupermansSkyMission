@@ -28,8 +28,8 @@ void ShootingEnemy::fly() {
         // Check if the enemy should stop
         if (!isStopping && !hasStopped && moverRect.x >= rand() % 500 + 300) {
             if (srcRect.x == 724 or srcRect.x == 1383 ) {
-            srcRect.x = -41; 
-            srcRect.y = -818;
+            srcRect.x = 41; 
+            srcRect.y = 818;
             srcRect.w = 77;
             srcRect.h = 155;
             }
@@ -39,19 +39,27 @@ void ShootingEnemy::fly() {
         }
 
         // Update animation frames
-        if (srcRect.x == 724) {
+        else if (srcRect.x == 724) {
             srcRect.x = 1383;
             srcRect.y = 843;
             srcRect.w = 94;
             srcRect.h = 129;
         } else if (srcRect.x == 1383) {
-            srcRect.x = 724;
-            srcRect.y = 843;
-            srcRect.w = 95;
-            srcRect.h = 129;
+            // srcRect.x = 724;
+            // srcRect.y = 843;
+            // srcRect.w = 95;
+            // srcRect.h = 129;
+            srcRect.x = 41; 
+            srcRect.y = 818;
+            srcRect.w = 77;
+            srcRect.h = 155;
         }
-        else if (srcRect.x = -41){
-            srcRect.x = 724;
+        else if (srcRect.x = 41){
+            // srcRect.x = 1383;
+            // srcRect.y = 843;
+            // srcRect.w = 94;
+            // srcRect.h = 129;
+            srcRect.x = 724; 
             srcRect.y = 843;
             srcRect.w = 95;
             srcRect.h = 129;
