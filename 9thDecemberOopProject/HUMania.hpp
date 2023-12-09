@@ -5,6 +5,8 @@
 #include "butterfly.hpp"
 #include "unit.hpp"
 #include "objectCreator.hpp"
+#include "superman.hpp"
+
 #include<vector>
 #include<list>
 #include<typeinfo>
@@ -20,7 +22,8 @@ class HUMania{
     void createObjectflying(int, int);
     void removeObject(Unit*);
 
-    bool checkcollision(const SDL_Rect* A, SDL_Rect* B)
+    bool checkcollision(const SDL_Rect* A, SDL_Rect* B) ;
+    void checkSupermanCollision(Superman& superman) ;
 };
 
 //HuMania will get repurposed as our "Create and remove enemy sprites Class"

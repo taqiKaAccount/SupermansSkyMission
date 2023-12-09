@@ -9,5 +9,10 @@ class Unit{
     virtual void fly(); // making fly() virtual because fly is different for each animal
     Unit();
     virtual bool del_child();
+
+    int getMoverRectX() const;
+    int getMoverRectY() const;
+    int getMoverRectW() const;
+    int getMoverRectH() const;
 };
 

@@ -9,3 +9,19 @@ void Unit::draw(){
 bool Unit::del_child(){
     return false;
 }
+
+int Unit::getMoverRectX() const {
+    return moverRect.x;
+}
+
+int Unit::getMoverRectY() const {
+    return moverRect.y;
+}
+
+int Unit::getMoverRectW() const {
+    return moverRect.w;
+}
+
+int Unit::getMoverRectH() const {
+    return moverRect.h;
+}

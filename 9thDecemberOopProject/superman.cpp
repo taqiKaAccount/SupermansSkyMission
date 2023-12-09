@@ -64,10 +64,10 @@ void Superman::createObject(int x, int y) {
     // Implementation as per your requirement
 }
 
-bool Superman::supermanCollision(const SDL_Rect* A, SDL_Rect* B) {
-    SDL_bool collided = SDL_HasIntersection(A, B);
-    return collided == SDL_TRUE;
-}
+// bool Superman::supermanCollision(const SDL_Rect* A, SDL_Rect* B) {
+//     SDL_bool collided = SDL_HasIntersection(A, B);
+//     return collided == SDL_TRUE;
+// }
 
 void Superman::animation(SDL_Renderer* gRenderer, SDL_Texture* assets) {
     

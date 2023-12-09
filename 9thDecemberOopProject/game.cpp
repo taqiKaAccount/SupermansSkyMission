@@ -212,6 +212,7 @@ void Game::run( )
         SDL_RenderCopy(Drawing::gRenderer, gTexture, NULL, NULL);//Draws background to renderer
         //***********************draw the objects here********************
         humania.drawObjects();
+        humania.checkSupermanCollision(supermanObject); 
         lazermachine.drawObjects();
         supermanObject.draw(Drawing::gRenderer, Drawing::assets);
         //****************************************************************

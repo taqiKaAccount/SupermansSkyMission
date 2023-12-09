@@ -3,7 +3,7 @@
 #include "drawing.hpp"
 #include "unit.hpp"
 class blimp : public Unit{
-    int speed = 15
+    int speed = 15;
     public:
         void fly();
         blimp(int x, int y);

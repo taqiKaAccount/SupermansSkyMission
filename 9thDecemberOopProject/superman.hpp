@@ -15,7 +15,7 @@ public:
     void left(SDL_Renderer* gRenderer, SDL_Texture* assets);
     void right(SDL_Renderer* gRenderer, SDL_Texture* assets);
     void createObject(int x, int y);
-    bool supermanCollision(const SDL_Rect* A, SDL_Rect* B);
+    // bool supermanCollision(const SDL_Rect* A, SDL_Rect* B);
 
     void animation(SDL_Renderer* gRenderer, SDL_Texture* assets);
 
