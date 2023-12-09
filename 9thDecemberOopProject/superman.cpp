@@ -88,7 +88,7 @@ void Superman::animation(SDL_Renderer* gRenderer, SDL_Texture* assets) {
 void Superman::healthcheck(){
     // int life = SupermanHealth.getLife();
     // SupermanHealth.reduceHealth(true);
-    SupermanHealth.reduceHealth(true);
+    SupermanHealth.reduceHealth(false);
 }
 int Superman::healthleft(){
     healthcheck();
