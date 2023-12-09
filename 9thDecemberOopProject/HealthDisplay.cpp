@@ -22,13 +22,16 @@ void HealthDisplay::RedrawHearts(SDL_Renderer* gRenderer, SDL_Texture* assets ,i
     {
     case 1:
         srcRect = {664, 272, 62, 53} ;
+        moverRect.w = 75;
         break;
     case 2:
         srcRect = {664, 352, 124, 53} ;
+        moverRect.w = 150;
         break;
     case 3:
         srcRect= {667, 429, 186, 53} ;
+        moverRect.w = 225;
         break;
     }
-    
+    SDL_RenderCopy(gRenderer, assets, &srcRect, &moverRect); 
 };

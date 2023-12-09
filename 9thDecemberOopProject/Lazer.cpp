@@ -16,7 +16,7 @@ Lazer::Lazer(int x, int y) : Unit(){
 }
 
 void Lazer::fly(){
-    moverRect.y += 15;
+    moverRect.y += 100;
     if (srcRect.x == 71) {
         srcRect.x=71;
         srcRect.y=286;

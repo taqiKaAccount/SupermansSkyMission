@@ -135,8 +135,10 @@ void Game::run( )
     bool IncreaseScore = true;
 
     Superman supermanObject(-100 , 200);
-    
+
     HealthDisplay displayHealth;
+
+    
 
     Uint32 lastSpawnTimeOfFlying = SDL_GetTicks(); // Initialize lastSpawnTime
     Uint32 lastSpawnTimeOfWalking = SDL_GetTicks();
@@ -234,6 +236,8 @@ void Game::run( )
             IncreaseScore = humania.checkLazerCollision(lazermachine.returnLazerVector()); 
             DecreaseHealth = humania.checkSupermanCollision(supermanObject); 
             supermanHealth.reduceHealth(DecreaseHealth);
+
+            displayHealth.RedrawHearts(Drawing::gRenderer, Drawing::assets, supermanHealth.getLife());
             supermanHealth.testHealth();
             lazermachine.drawObjects();
             supermanObject.draw(Drawing::gRenderer, Drawing::assets);
