@@ -138,20 +138,17 @@ void Game::run( )
         Uint32 elapsedTimeFlying = currentTimeFlying - lastSpawnTimeOfFlying;
 
         Uint32 currentTimeWalking = SDL_GetTicks();
-        Uint32 elapsedTimeWalking = (currentTimeFlying - lastSpawnTimeOfFlying);
+        Uint32 elapsedTimeWalking = (currentTimeWalking - lastSpawnTimeOfWalking);
 
-        if (start == true and elapsedTimeWalking >= 4000) // Adjust the interval (3000 milliseconds) as needed
+        if (start == true and elapsedTimeWalking >= (4250 - rand() % 1000 ) ) // Adjust the interval (3000 milliseconds) as needed
         {       
             humania.createObjectwalking(700, 450);
-            
             lastSpawnTimeOfWalking = currentTimeWalking; // Update lastSpawnTime for the next interval
         }
 
-        if (start == true and elapsedTimeFlying >= 5000) // Adjust the interval (3000 milliseconds) as needed
+        if (start == true and elapsedTimeFlying >= (3750 - rand()%600 ) ) // Adjust the interval (3000 milliseconds) as needed
         {
             humania.createObjectflying(700, 450);
-        
-            
             lastSpawnTimeOfFlying = currentTimeFlying;
              // Update lastSpawnTime for the next interval
         }
@@ -166,13 +163,6 @@ void Game::run( )
             {
                 quit = true;
             }
-
-            // if(e.type == SDL_MOUSEBUTTONDOWN){
-            // //this is a good location to add pigeon in linked list.
-            //     int xMouse, yMouse;
-            //     SDL_GetMouseState(&xMouse,&yMouse);
-            //     humania.createObject(xMouse, yMouse);
-            // }
 
 			if (e.type == SDL_KEYDOWN && e.key.keysym.sym == SDLK_SPACE) {
                 start = true;
@@ -205,8 +195,9 @@ void Game::run( )
                         std::cout << "z pressed!" << std::endl;
                         //supermanObject.up(Drawing::gRenderer , Drawing::assets);
                         supermanObject.animation(Drawing::gRenderer,Drawing::assets);
+
                         lazermachine.createObject(supermanObject.getMoverRectX(), supermanObject.getMoverRectY());
-                        supermanObject.draw(Drawing::gRenderer , Drawing::assets);
+                        // supermanObject.draw(Drawing::gRenderer , Drawing::assets);
                         break;
             }
         }

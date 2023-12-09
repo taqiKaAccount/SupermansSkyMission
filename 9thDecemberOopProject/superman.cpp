@@ -72,7 +72,7 @@ bool Superman::supermanCollision(const SDL_Rect* A, SDL_Rect* B) {
 void Superman::animation(SDL_Renderer* gRenderer, SDL_Texture* assets) {
     
     srcRect = {-332, -269, 187, 119};
-    moverRect = {getMoverRectX(), getMoverRectY(), 75, 75};
+    // moverRect = {getMoverRectX(), getMoverRectY(), 75, 75};
     SDL_RenderCopy(gRenderer, assets, &srcRect, &moverRect);
     
 }

@@ -12,7 +12,7 @@ bool blimp::del_child(){
 
 blimp::blimp(int x, int y) : Unit(){
     Unit::srcRect = {1187,297,321,113};
-    Unit::moverRect = {850, 300, 50, 50};
+    Unit::moverRect = {850, 300, 60, 100};
 }
 void blimp::fly(){
     moverRect.x -= 15;
