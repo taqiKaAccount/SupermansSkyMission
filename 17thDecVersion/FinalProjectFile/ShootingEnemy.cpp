@@ -43,6 +43,8 @@ void ShootingEnemy::fly() {
             }
             isStopping = true;
             stopTime = SDL_GetTicks(); 
+            moverRect.y -= 50;
+
              // Record the time when stopping
             // bulletMaker->createObject(moverRect.x, moverRect.y);
         }
