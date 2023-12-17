@@ -3,7 +3,7 @@
 
 // Function to create a walking object based on random selection
 Unit* ObjectCreator::getObjectwalking(int x, int y) {
-    int n = rand() % 2;
+    int n = rand() % 6;
     Unit* objects = nullptr;
 
     // Select a random walking object type
@@ -12,6 +12,18 @@ Unit* ObjectCreator::getObjectwalking(int x, int y) {
             objects = new DoomsDay(x, y);  //, bulletMaker);
             break;
         case 1:
+            objects = new RunningEnemy(x, y);
+            break;
+        case 2:
+            objects = new RunningEnemy(x, y);
+            break;
+        case 3:
+            objects = new RunningEnemy(x, y);
+            break;
+        case 4:
+            objects = new RunningEnemy(x, y);
+            break;
+        case 5:
             objects = new RunningEnemy(x, y);
             break;
     }

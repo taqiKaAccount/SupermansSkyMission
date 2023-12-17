@@ -34,7 +34,7 @@ void Superman::up(SDL_Renderer* gRenderer, SDL_Texture* assets) {
         moverRect.y = 30;
     }
     // Move Superman upward
-    moverRect.y -= 40;
+    moverRect.y -= 50;
     SDL_RenderCopy(gRenderer, assets, &srcRect, &moverRect);
 }
 
@@ -45,7 +45,7 @@ void Superman::down(SDL_Renderer* gRenderer, SDL_Texture* assets) {
         moverRect.y = 400;
     }
     // Move Superman downward
-    moverRect.y += 40;
+    moverRect.y += 50;
     SDL_RenderCopy(gRenderer, assets, &srcRect, &moverRect);
 }
 

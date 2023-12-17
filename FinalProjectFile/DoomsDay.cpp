@@ -5,13 +5,6 @@ DoomsDay:: DoomsDay(int x, int y): Unit(), stopTime(0), isStopping(false), hasSt
     Unit::moverRect = {20, 500, 100, 100};
 }
 
-// bool DoomsDay::del_child() {
-//     if (moverRect.x >= 999) {
-//      DoomsDay;
-//     } else {
-//         return false;
-//     }
-// }
 bool DoomsDay::del_child() {
     if (moverRect.x >= 999) {
         return true;
@@ -19,12 +12,7 @@ bool DoomsDay::del_child() {
         return false;
     }
 }
-// Modify the constructor to take a BulletMaker pointer
-// DoomsDay::DoomsDay(int x, int y, BulletMaker* bulletMakerPtr)
-//     : Unit(), stopTime(0), isStopping(false), hasStopped(false), bulletMaker(bulletMakerPtr) {
-// DoomsDayReDoomsDay43, 94, 129};
-//     Unit::moverRect = {20, 550, 50, 50};
-// }
+
 void DoomsDay::fly() {
     // If the enemy is stopping and hasn't stopped yet
     
@@ -34,12 +22,12 @@ void DoomsDay::fly() {
 
     if (isStopping && !hasStopped) {
         Uint32 currentTime = SDL_GetTicks();
-        if (currentTime - stopTime >= 2000) {  // Stop for 2000 milliseconds (adjust as needed)
+        if (currentTime - stopTime >= 500) {  // Stop for 2000 milliseconds (adjust as needed)
             isStopping = false;
             hasStopped = true;  // Set the flag to indicate that the enemy has stopped
             jumpStartTime = SDL_GetTicks();
             isJumping = true;
-            moverRect.y += 500;
+            moverRect.y += 150;
         }
     } else {
         // Continue flying
@@ -47,23 +35,38 @@ void DoomsDay::fly() {
 
         // Check if the enemy should stop
         if (!isStopping && !hasStopped && moverRect.x >= rand() % 500 + 300) {
-            if (srcRect.x == 724 or srcRect.x == 1383) {
-                srcRect.x = 41; 
-                srcRect.y = 818;
-                srcRect.w = 77;
-                srcRect.h = 155;
+            if (srcRect.x == 696 or srcRect.x == 1132 ) {
+                srcRect.x = 1126; 
+                srcRect.y = 760;
+                srcRect.w = 156;
+                srcRect.h = 183;
             }
+            isJumping = false;
             isStopping = true;
             stopTime = SDL_GetTicks(); 
-            moverRect.y -= 500;
+            moverRect.y -= 150;
+            
 
         }
+        if (srcRect.x == 1132 ) {
+                srcRect.x = 696;
+                srcRect.y = 551;
+                srcRect.w = 159;
+                srcRect.h = 155;
+            }
+        else if (srcRect.x==696){
+                srcRect.x = 1132;
+                srcRect.y = 546;
+                srcRect.w = 156;
+                srcRect.h = 183;
+        }
+        else if(srcRect.x == 1126 and isJumping == true){
+                srcRect.x = 696;
+                srcRect.y = 551;
+                srcRect.w = 159;
+                srcRect.h = 155;
+        }
         
-
-        // Update animation frames
-        // ... (your existing animation logic)
-        
-
         // Reset jump-related flags when landing
         if (moverRect.y >= 600 - 50) {
             moverRect.y = 600 - 50;

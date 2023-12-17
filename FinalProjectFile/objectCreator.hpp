@@ -8,6 +8,6 @@
 
 class ObjectCreator {
 public:
-    Unit* getObjectwalking(int x, int y);//, BulletMaker* bulletMaker);
+    Unit* getObjectwalking(int x, int y);
     Unit* getObjectflying(int x, int y);
 };

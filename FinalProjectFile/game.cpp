@@ -14,7 +14,6 @@
 SDL_Renderer* Drawing::gRenderer = NULL;
 SDL_Texture* Drawing::assets = NULL;
 
-// class BulletMaker;
 bool Game::init()
 {
     //Initialization flag
@@ -231,7 +230,7 @@ void Game::run( )
                     case SDLK_z:
                         supermanObject.animation(Drawing::gRenderer,Drawing::assets);
 
-                        lazermachine.createObject(supermanObject.getMoverRectX(), supermanObject.getMoverRectY());
+                        lazermachine.createObject(supermanObject.getMoverRectX()+40, supermanObject.getMoverRectY()+20);
                         //similar working to object_engine, but for lazers
                         break;
                     // Handle time-stop feature
